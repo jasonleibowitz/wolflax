@@ -115,6 +115,10 @@ p {
   margin-top: 2em;
 }
 
+.faq-question {
+  cursor: pointer;
+}
+
 .answer {
   display: none;
 }
