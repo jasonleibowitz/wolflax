@@ -6,6 +6,14 @@
   text-align: justify;
 }
 
+.bottom-margin {
+  margin-bottom: 2em;
+}
+
+p {
+  text-align: justify;
+}
+
 .hero-img-wrap {
   position: absolute;
   background: url('hero.jpg');
@@ -19,10 +27,16 @@
 }
 
 .logo {
-  width: 15%;
+  /*width: 15%;*/
+  width: 200px;
   margin-top: 2em;
   margin-left: 1em;
   color: white;
+}
+
+.logo-nav {
+  width: 100px;
+  margin-top: -11px;
 }
 
 .nav-wrap {
@@ -49,6 +63,52 @@
   margin-right: 5%;
   /*margin-top: 1.5%;*/
   vertical-align: middle;
+}
+
+#jordan {
+  display: none;
+}
+
+#staff {
+  display: none;
+}
+
+.profile-wrap, .profile-wrap-right, .profile-wrap-jordan {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+  margin-right: 2em;
+}
+
+.profile-wrap-right {
+  float: right;
+  margin-left: 2em;
+}
+
+.profile-wrap-jordan {
+  display: block;
+  float: none;
+  margin: 0 auto;
+}
+
+.profile {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.jordan-profile {
+  text-align: center;
+  width: 200px;
+}
+
+#jordan-bio {
+  margin-top: 3em;
+}
+
+.staff {
+  margin-bottom: 3em;
 }
 
 .footer {
