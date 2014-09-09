@@ -1,0 +1,50 @@
+.centered {
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.hero-img-wrap {
+  position: absolute;
+  background-image: url('hero.jpg');
+  background-size: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  height: 75%;
+  width: 100%;
+  left: 0;
+  overflow: hidden;
+}
+
+.nav-wrap {
+  /*display: inline-block;*/
+  position: absolute;
+  height: 10%;
+  width: 100%;
+  top: 65%;
+  left: 0;
+  background: rgba(0, 0, 0, .7);
+  text-align: center;
+}
+
+.nav-wrap:before {
+  display: inline-block;
+  content: '';
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+
+.nav-button {
+  display: inline-block;
+  margin-right: 5%;
+  /*margin-top: 1.5%;*/
+  vertical-align: middle;
+}
+
+.content {
+  /*position: absolute;*/
+  /*top: 75%;*/
+}
