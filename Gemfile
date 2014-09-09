@@ -47,3 +47,4 @@ gem "binding_of_caller"
 gem "paperclip", "~> 4.2"
 gem 'devise'
 gem 'rails_12factor', group: :production
+ruby '2.1.0'

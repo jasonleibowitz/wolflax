@@ -4,9 +4,25 @@ $(document).ready(function(){
   fixHeight();
   $(window).resize(fixHeight);
 
+  // about page content toggle
   $('#about-button').click(showAbout);
   $('#jordan-button').click(showJordan);
   $('#staff-button').click(showStaff);
+
+  // faq animation logic
+  $('.faq-question').click(function(){
+    var num = $(this).data('num');
+    if ($('#answer-' + num).css('display') === 'none'){
+      $('#answer-' + num).slideDown();
+    } else {
+      $('#answer-' + num).slideUp();
+    }
+  });
+
+  // binds collapse to any faq answer, so if clicked, that answer will collapse
+  $('.answer').click(function(){
+    $(this).slideUp();
+  });
 
 });
 

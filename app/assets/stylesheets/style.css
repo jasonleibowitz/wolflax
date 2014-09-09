@@ -111,6 +111,14 @@ p {
   margin-bottom: 3em;
 }
 
+.faq-content {
+  margin-top: 2em;
+}
+
+.answer {
+  display: none;
+}
+
 .footer {
   margin-top: 4%;
   padding-top: 2em;
