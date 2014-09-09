@@ -44,7 +44,44 @@
   vertical-align: middle;
 }
 
-.content {
-  /*position: absolute;*/
-  /*top: 75%;*/
+.footer {
+  margin-top: 4%;
+  padding-top: 2em;
+  background: rgb(43, 45, 46);
+  color: rgb(255, 255, 255);
+}
+
+.footer h4 {
+  padding-bottom: 1em;
+}
+
+.footer .social-media {
+  text-align: center;
+  padding-top: 1em;
+}
+
+.footer i {
+  color: white;
+  padding-right: 1em;
+  padding-bottom: 1em;
+}
+
+.fa-facebook:hover {
+  color: RGB(59, 87, 157);
+}
+
+.fa-twitter:hover {
+  color: RGB(85, 172, 238);
+}
+
+.fa-linkedin:hover {
+  color: RGB(7, 119, 180);
+}
+
+.fa-youtube-play:hover {
+  color: red;
+}
+
+.footer .last-icon {
+  padding-right: 0;
 }
