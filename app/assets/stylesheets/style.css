@@ -18,6 +18,13 @@
   overflow: hidden;
 }
 
+.logo {
+  width: 15%;
+  margin-top: 2em;
+  margin-left: 1em;
+  color: white;
+}
+
 .nav-wrap {
   /*display: inline-block;*/
   position: absolute;
