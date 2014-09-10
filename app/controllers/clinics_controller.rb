@@ -3,7 +3,7 @@ class ClinicsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @clinics = Clinic.where("date_time > ?", DateTime.now)
+    @clinics = Clinic.where("date_time > ?", DateTime.now).order(date_time: :asc)
   end
 
   def adminview
@@ -44,7 +44,7 @@ class ClinicsController < ApplicationController
 
   private
   def clinic_params
-    params.require(:clinic).permit(:name, :price, :date_time, :location_name, :location_street_one, :location_street_two, :city, :state, :zipcode, :total_spots)
+    params.require(:clinic).permit(:name, :price, :description, :date_time, :location_name, :location_street_one, :location_street_two, :city, :state, :zipcode, :total_spots)
   end
 
   # Method to increase remaining slots when total slots is updated

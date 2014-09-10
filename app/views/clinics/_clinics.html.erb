@@ -14,6 +14,7 @@
     <% @clinics.each do |clinic| %>
       <div class="col-xs-10 col-xs-offset-2 bottom-margin">
         <p><span class="bold"><%= clinic.name %></span> - $<%= clinic.price %></p>
+        <p>Description: <%= clinic.description %></p>
         <p>Location: <%= clinic.location_name %></p>
         <p>Date: <%= clinic.date_time %></p>
         <p><%= clinic.location_street_one %>, <%= clinic.city %>, <%= clinic.state %></p>
