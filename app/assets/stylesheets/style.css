@@ -28,15 +28,15 @@ p {
 
 .logo {
   /*width: 15%;*/
-  width: 200px;
-  margin-top: 2em;
+  width: 150px;
+  /*margin-top: 2em;*/
   margin-left: 1em;
   color: white;
 }
 
 .logo-nav {
-  width: 100px;
-  margin-top: -11px;
+  width: 60px;
+  margin-top: -20px;
 }
 
 .nav-wrap {
@@ -100,7 +100,8 @@ p {
 
 .jordan-profile {
   text-align: center;
-  width: 200px;
+  width: 400px;
+  margin-left: -85px;
 }
 
 #jordan-bio {
