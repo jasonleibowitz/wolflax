@@ -1,16 +1,60 @@
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-homepage" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path %>"><%= image_tag 'logo_duke.png', class: 'logo-nav' %></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/about">About</a></li>
+        <li><a href="#">Clinics</a></li>
+        <li><a href="/faq">FAQs</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <!-- admin section -->
+      <% if current_user != nil && current_user.admin %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Menu <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/admin/clinics">Scheduled Clinics</a></li>
+            <li><a href="/clinics/new">Add a Clinic</a></li>
+            <li class="divider"></li>
+            <li><%= link_to'Log Out', destroy_user_session_path, method: 'delete' %></li>
+          </ul>
+        </li>
+      </ul>
+      <% end %>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
 <div class="container-fluid">
   <div class="hero-img-wrap">
     <%= image_tag 'logo_duke.png', class: 'logo' %>
   </div>
   <div class="nav-wrap">
-    <a href="/about"><button type="button" class="btn btn-default nav-button vcenter">about</button></a>
-    <a href="#"><button type="button" class="btn btn-default nav-button">clinics</button></a>
-    <a href="/faq"><button type="button" class="btn btn-default nav-button">FAQ</button></a>
-    <a href="/contact"><button type="button" class="btn btn-default nav-button">Contact</button></a>
+    <a href="/about"><button type="button" class="btn btn-default nav-button vcenter"><i class="fa fa-github"></i> about</button></a>
+    <a href="/clinics"><button type="button" class="btn btn-default nav-button"><%= image_tag 'clinic.svg', class: 'button-icon' %> clinics</button></a>
+    <a href="/faq"><button type="button" class="btn btn-default nav-button"><i class="fa fa-comment"></i> FAQ</button></a>
+    <a href="/contact"><button type="button" class="btn btn-default nav-button"><i class="fa fa-envelope"></i> Contact</button></a>
   </div>
 </div>
 
 <div class="container-fluid content">
+  <div class="col-xs-10 col-xs-offset-1">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+
   <div class="col-xs-10 col-xs-offset-1 centered">
     <h1>Welcome to Wolf Lacrosse</h1>
     <p class="justify">I am planning to start my own series of clinics for willing attackman ranging from 6th to 10th grade. Midfielders are also welcomed because it is always beneficial to learn every position, but the clinic would be specified around attack play. Dodging, shooting, inside play, feeding, riding, leadership, training, an other aspects of the position will be at the core of the program.</p>
