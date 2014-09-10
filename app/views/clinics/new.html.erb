@@ -1,0 +1,35 @@
+<h1>Create a New Clinic</h1>
+
+<%= form_for @clinic do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+
+  <%= f.label :date_time %>
+  <%= f.datetime_local_field :date_time %>
+
+  <%= f.label :location_name %>
+  <%= f.text_field :location_name %>
+
+  <%= f.label :location_street_one %>
+  <%= f.text_field :location_street_one %>
+
+  <%= f.label :location_street_two %>
+  <%= f.text_field :location_street_two %>
+
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+
+  <%= f.label :state %>
+  <%= f.text_field :state %>
+
+  <%= f.label :zipcode %>
+  <%= f.number_field :zipcode %>
+
+  <%= f.label :total_spots %>
+  <%= f.number_field :total_spots %>
+
+  <%= f.submit %>
+<% end %>

@@ -22,6 +22,14 @@ p {
   font-weight: bold;
 }
 
+.float-left {
+  float: left;
+}
+
+.btn {
+  margin-right: 1em;
+}
+
 .hero-img-wrap {
   position: absolute;
   background: url('hero.jpg');
@@ -198,9 +206,8 @@ p {
   vertical-align: middle;
 }
 
-.red {
-  background: red;
-  margin: 0 auto;
+.alert {
+  color: red;
 }
 
 .blue {
