@@ -1,7 +1,13 @@
 class ClinicsController < ApplicationController
 
+  before_action :authenticate_user!, except: [:index]
+
   def index
-    @clinics = Clinic.all
+    @clinics = Clinic.where("date_time > ?", DateTime.now)
+  end
+
+  def adminview
+    @clinics = Clinic.order(date_time: :desc)
   end
 
   def new
@@ -9,18 +15,24 @@ class ClinicsController < ApplicationController
   end
 
   def create
-    clinic = Clinic.new(clinic_params)
-    clinic.remaining_spots = clinic.total_spots
-    clinic.save!
+    @clinic = Clinic.new(clinic_params)
+    @clinic.remaining_spots = @clinic.total_spots
+    @clinic.save!
+    flash[:alert] = "#{@clinic.name} has been created successfully."
     redirect_to clinics_path
   end
 
   def edit
-
+    @clinic = Clinic.find(params[:id])
   end
 
   def update
-
+    @clinic = Clinic.find(params[:id])
+    @clinic.update(clinic_params)
+    if @clinic.save!
+      flash[:alert] = "#{@clinic.name} has been updated successfully."
+      redirect_to clinics_path
+    end
   end
 
   def destroy
@@ -34,5 +46,7 @@ class ClinicsController < ApplicationController
   def clinic_params
     params.require(:clinic).permit(:name, :price, :date_time, :location_name, :location_street_one, :location_street_two, :city, :state, :zipcode, :total_spots)
   end
+
+  # Method to increase remaining slots when total slots is updated
 
 end
