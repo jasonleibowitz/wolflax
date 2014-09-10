@@ -10,8 +10,16 @@
   margin-bottom: 2em;
 }
 
+.bottom-margin-2x {
+  margin-bottom: 4em;
+}
+
 p {
   text-align: justify;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .hero-img-wrap {
@@ -164,4 +172,37 @@ p {
 
 .footer .last-icon {
   padding-right: 0;
+}
+
+.contact-icons {
+  text-align: center;
+}
+
+.contact-icons p {
+  text-align: center;
+}
+
+.contact-icon-wrap {
+  background: rgb(0, 26, 87);
+  width: 150px;
+  height: 150px;
+  line-height: 140px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 2em;
+}
+
+.contact-icon {
+  /*padding-right: 2em;*/
+  width: 100px;
+  vertical-align: middle;
+}
+
+.red {
+  background: red;
+  margin: 0 auto;
+}
+
+.blue {
+  background: blue;
 }
