@@ -34,6 +34,19 @@ $(document).ready(function(){
   $('#email-icon').mouseenter(shrink);
   $('#email-icon').mouseleave(unShrink);
 
+  // nav bar animation
+  navTop = $('.nav-wrap').position().top;
+  $(window).scroll(function(){
+    var scrolled = $(window).scrollTop();
+    if (scrolled > navTop){
+      $('.nav-wrap').fadeOut();
+      $('#navbar-homepage').fadeIn();
+    } else if (scrolled < navTop) {
+      $('.nav-wrap').fadeIn();
+      $('#navbar-homepage').fadeOut();
+    }
+  });
+
 });
 
 function fixHeight(){
