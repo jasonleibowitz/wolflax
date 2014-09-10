@@ -23,7 +23,7 @@
           <%= button_to 'edit', edit_clinic_path(clinic), :method => 'get', class: 'btn btn-info float-left' %>
           <%= button_to "delete", clinic, :method => 'delete', class: 'btn btn-danger float-left' %>
         <% else %>
-          <%= button_to 'buy', edit_clinic_path(clinic), :method => 'get', class: 'btn btn-primary btn-buy' %>
+          <%= button_to 'buy', clinics_path, :method => 'get', class: 'btn btn-primary btn-buy' %>
         <% end %>
       </div>
     <% end %>
