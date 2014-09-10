@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get '/about' => 'home#about'
   get '/faq' => 'home#faq'
   get '/contact' => 'home#contact'
+  get '/admin/clinics' => 'clinics#adminview'
   root to: 'home#welcome'
 end
