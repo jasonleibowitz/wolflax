@@ -34,7 +34,7 @@
             <%= button_to 'edit', edit_clinic_path(clinic), :method => 'get', class: 'btn btn-info float-left' %>
             <%= button_to "delete", clinic, :method => 'delete', class: 'btn btn-danger float-left' %>
           <% end %>
-            <%= button_to "view students", root_path, method: 'get', class: 'btn btn-primary float-left' %>
+            <%= link_to 'view students', students_path(:clinic_id => clinic.id), class: 'btn btn-primary' %>
         <% else %>
           <%= link_to 'buy', new_student_path(:clinic_id => clinic.id) %>
         <% end %>

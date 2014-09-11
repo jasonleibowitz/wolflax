@@ -1,7 +1,8 @@
 class StudentsController < ApplicationController
 
   def index
-
+    @clinic = Clinic.find(params[:clinic_id])
+    @students = @clinic.students
   end
 
   def show

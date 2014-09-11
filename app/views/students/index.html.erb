@@ -1,0 +1,56 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path %>"><%= image_tag 'logo_duke.png', class: 'logo-nav' %></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/about">About</a></li>
+        <li><a href="/clinics">Clinics</a></li>
+        <li><a href="/faq">FAQs</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <!-- admin section -->
+      <% if current_user != nil && current_user.admin %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Menu <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/admin/clinics">Scheduled Clinics</a></li>
+            <li><a href="/clinics/new">Add a Clinic</a></li>
+            <li class="divider"></li>
+            <li><%= link_to'Log Out', destroy_user_session_path, method: 'delete' %></li>
+          </ul>
+        </li>
+      </ul>
+      <% end %>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+  <div class="col-xs-10 col-xs-offset-1 centered bottom-margin">
+    <h1>Students Signed Up for <%= @clinic.name %></h1>
+    <h4><%= @clinic.date_time.strftime "%a %b %e, %Y at %l:%M %P" %></h4>
+    <h4>Total Students: <%= @clinic.students.length %></h4>
+    <h4>Remaining Spots: <%= @clinic.remaining_spots %></h4>
+  </div>
+
+  <div class="col-xs-10 col-xs-offset-2">
+    <ol>
+      <% @students.each do |student| %>
+        <li><a href="mailto:<%= student.email %>"><%= student.name %></a></li>
+      <% end %>
+    </ol>
+  </div>
+</div>
+
