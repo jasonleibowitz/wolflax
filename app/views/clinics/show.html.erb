@@ -1,0 +1,123 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path %>"><%= image_tag 'logo_duke.png', class: 'logo-nav' %></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/about">About</a></li>
+        <li><a href="/clinics">Clinics</a></li>
+        <li><a href="/faq">FAQs</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <!-- admin section -->
+      <% if current_user != nil && current_user.admin %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Menu <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/admin/clinics">Scheduled Clinics</a></li>
+            <li><a href="/clinics/new">Add a Clinic</a></li>
+            <li class="divider"></li>
+            <li><%= link_to'Log Out', destroy_user_session_path, method: 'delete' %></li>
+          </ul>
+        </li>
+      </ul>
+      <% end %>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+  <div class="col-xs-10 col-xs-offset-1">
+    <h1><%= @clinic.name %></h1>
+  </div>
+  <div class="col-xs-10 col-xs-offset-2">
+    <%= form_for @student, multipart: true do |f| %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+
+      <%= f.hidden_field :clinic, value: @clinic.id %>
+
+    <div class="field">
+      <%= label_tag :card_number, "Credit Card Number" %>
+      <%= text_field_tag :card_number, nil, name: nil %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :card_code, "Security Code on Card (CVV)" %>
+      <%= text_field_tag :card_code, nil, name: nil %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :card_month, "Card Expiration" %>
+      <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
+      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 15}, {name: nil, id: "card-year"} %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <% end %>
+    <!-- <form action="/students" method="POST" id="payment-form">
+      <span class="payment-errors"></span>
+
+      <input type="hidden" name="clinic" value="<%= @clinic.id %>">
+
+      <div class="form-row">
+        <label>
+          <span>Full Name</span>
+          <input type="text" name="name" size="20" data-stripe="name"/>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          <span>Email</span>
+          <input type="text" name="email" size="20" data-stripe="email"/>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          <span>Card Number</span>
+          <input type="text" size="20" data-stripe="number"/>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          <span>CVC</span>
+          <input type="text" size="4" data-stripe="cvc"/>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          <span>Expiration (MM/YYYY)</span>
+          <input type="text" size="2" data-stripe="exp-month"/>
+        </label>
+        <span> / </span>
+        <input type="text" size="4" data-stripe="exp-year"/>
+      </div>
+
+      <button type="submit">Submit Payment</button>
+    </form> -->
+  </div>
+</div>

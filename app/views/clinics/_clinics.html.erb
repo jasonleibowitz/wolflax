@@ -1,3 +1,9 @@
+<script type="text/javascript">
+  // This identifies your website in the createToken call below
+  Stripe.setPublishableKey('pk_test_zPWECKnej44Flev2zwZDcznJ');
+  // ...
+</script>
+
 <div class="container">
 
   <% if flash[:alert] != nil %>
@@ -13,7 +19,7 @@
   <% else %>
     <% @clinics.each do |clinic| %>
       <div class="col-xs-10 col-xs-offset-2 bottom-margin">
-        <p><span class="bold"><%= clinic.name %></span> - $<%= clinic.price %></p>
+        <p><span class="bold"><%= clinic.name %></span> - <%= number_to_currency(clinic.price) %></p>
         <p>Location: <%= clinic.location_name %></p>
         <p>Date: <%= clinic.date_time %></p>
         <p><%= clinic.location_street_one %>, <%= clinic.city %>, <%= clinic.state %></p>
@@ -23,7 +29,7 @@
           <%= button_to 'edit', edit_clinic_path(clinic), :method => 'get', class: 'btn btn-info float-left' %>
           <%= button_to "delete", clinic, :method => 'delete', class: 'btn btn-danger float-left' %>
         <% else %>
-          <%= button_to 'buy', edit_clinic_path(clinic), :method => 'get', class: 'btn btn-primary btn-buy' %>
+          <%= link_to 'buy', clinic_path(clinic) %>
         <% end %>
       </div>
     <% end %>
