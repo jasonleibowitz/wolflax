@@ -3,7 +3,7 @@ class ClinicsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @clinics = Clinic.where("date_time > ?", DateTime.now)
+    @clinics = Clinic.where("date_time > ?", DateTime.now).order(date_time: :asc)
   end
 
   def adminview

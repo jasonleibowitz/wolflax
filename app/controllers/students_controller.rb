@@ -11,11 +11,15 @@ class StudentsController < ApplicationController
   def new
     @clinic = Clinic.find(params[:clinic_id])
     @student = @clinic.students.build
+    if @student.clinic.remaining_spots == 0
+      flash[:alert] = "This clinic is currently sold out."
+    end
   end
 
   def create
     @student = Student.new(student_params)
     if @student.save_with_payment
+      @student.clinic.update_attendance
       redirect_to @student.clinic, :notice => "Thank you for your purchase. We look forward to seeing you!"
     else
       render :new

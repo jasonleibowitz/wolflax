@@ -40,53 +40,64 @@
 <div class="container">
   <div class="col-xs-10 col-xs-offset-1">
     <h1><%= @student.clinic.name %></h1>
+    <p><%= @student.clinic.date_time.strftime "%A %b %e, %Y at %l:%M %P" %></p>
+    <p><%= @student.clinic.description %></p>
   </div>
-  <div class="col-xs-10 col-xs-offset-2">
-    <%= form_for @student, multipart: true do |f| %>
-
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name, id: 'name' %>
+  <% if flash[:alert] != nil %>
+    <div class="col-xs-10 col-xs-offset-1 bottom-margin">
+      <p class="alert"><%= flash[:alert] %></p>
     </div>
-
-      <%= f.hidden_field :clinic_id, value: @student.clinic.id %>
-      <%= f.hidden_field :stripe_card_token %>
-      <%= f.hidden_field :amount, value: @student.clinic.price.to_i * 100 %>
-
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-    </div>
-
-    <% if @student.stripe_card_token %>
-      <p>Credit Card has been provided</p>
-    <% else %>
+  <% else %>
+    <div class="col-xs-10 col-xs-offset-2">
+      <%= form_for @student, multipart: true do |f| %>
 
       <div class="field">
-        <%= label_tag :card_number, "Credit Card Number" %>
-        <%= text_field_tag :card_number, nil, name: nil %>
+        <%= f.label :name %>
+        <%= f.text_field :name, id: 'name' %>
       </div>
 
-      <div class="field">
-        <%= label_tag :card_code, "Security Code on Card (CVV)" %>
-        <%= text_field_tag :card_code, nil, name: nil %>
-      </div>
+        <%= f.hidden_field :clinic_id, value: @student.clinic.id %>
+        <%= f.hidden_field :stripe_card_token %>
+        <%= f.hidden_field :amount, value: @student.clinic.price.to_i * 100 %>
 
       <div class="field">
-        <%= label_tag :card_month, "Card Expiration" %>
-        <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
-        <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 15}, {name: nil, id: "card_year"} %>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
       </div>
-    <% end %>
-      <div id="stripe_error">
-        <noscript>JavaScript is not enabled and is required for this form. First enable it in your browser settings.</noscript>
+
+      <% if @student.stripe_card_token %>
+        <p>Credit Card has been provided</p>
+      <% else %>
+
+        <div class="field">
+          <%= label_tag :card_number, "Credit Card Number" %>
+          <%= text_field_tag :card_number, nil, name: nil %>
+        </div>
+
+        <div class="field">
+          <%= label_tag :card_code, "Security Code on Card (CVV)" %>
+          <%= text_field_tag :card_code, nil, name: nil %>
+        </div>
+
+        <div class="field">
+          <%= label_tag :card_month, "Card Expiration" %>
+          <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
+          <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 15}, {name: nil, id: "card_year"} %>
+        </div>
+      <% end %>
+        <div id="stripe_error">
+          <noscript>JavaScript is not enabled and is required for this form. First enable it in your browser settings.</noscript>
+        </div>
+        <div class="field_with_errors">
+          <%= @student.errors.full_messages.join(', ') %>
+        </div>
+      <div class="actions">
+        <%= f.submit %>
       </div>
-      <div class="field_with_errors">
-        <%= @student.errors.full_messages.join(', ') %>
-      </div>
-    <div class="actions">
-      <%= f.submit %>
+      <% end %>
     </div>
-    <% end %>
-  </div>
+
+  <% end %>
+
+
 </div>

@@ -46,96 +46,10 @@
     <%= notice %>
   </div>
 
-  <div class="col-xs-10 col-xs-offset-2">
-    <%= form_for @student, multipart: true do |f| %>
+  <div class="col-xs-10 col-xs-offset-1">
+    <%= button_to 'home', root_path, method: 'get', class: 'btn btn-primary float-left' %>
+    <%= button_to 'clinics', clinics_path, method: 'get', class: 'btn btn-primary float-left' %>
+  </div>
 
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name, id: 'name' %>
-    </div>
-
-      <%= f.hidden_field :clinic_id, value: @clinic.id %>
-      <%= f.hidden_field :stripe_card_token %>
-      <%= f.hidden_field :amount, value: @clinic.price.to_i * 100 %>
-
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-    </div>
-
-    <% if @student.stripe_card_token %>
-      <p>Credit Card has been provided</p>
-    <% else %>
-
-      <div class="field">
-        <%= label_tag :card_number, "Credit Card Number" %>
-        <%= text_field_tag :card_number, nil, name: nil %>
-      </div>
-
-      <div class="field">
-        <%= label_tag :card_code, "Security Code on Card (CVV)" %>
-        <%= text_field_tag :card_code, nil, name: nil %>
-      </div>
-
-      <div class="field">
-        <%= label_tag :card_month, "Card Expiration" %>
-        <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
-        <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 15}, {name: nil, id: "card_year"} %>
-      </div>
-    <% end %>
-      <div id="stripe_error">
-        <noscript>JavaScript is not enabled and is required for this form. First enable it in your browser settings.</noscript>
-      </div>
-      <div class="field_with_errors">
-        <%= @student.errors.full_messages.join(', ') %>
-      </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-    <% end %>
-    <!-- <form action="/students" method="POST" id="payment-form">
-      <span class="payment-errors"></span>
-
-      <input type="hidden" name="clinic" value="<%= @clinic.id %>">
-
-      <div class="form-row">
-        <label>
-          <span>Full Name</span>
-          <input type="text" name="name" size="20" data-stripe="name"/>
-        </label>
-      </div>
-
-      <div class="form-row">
-        <label>
-          <span>Email</span>
-          <input type="text" name="email" size="20" data-stripe="email"/>
-        </label>
-      </div>
-
-      <div class="form-row">
-        <label>
-          <span>Card Number</span>
-          <input type="text" size="20" data-stripe="number"/>
-        </label>
-      </div>
-
-      <div class="form-row">
-        <label>
-          <span>CVC</span>
-          <input type="text" size="4" data-stripe="cvc"/>
-        </label>
-      </div>
-
-      <div class="form-row">
-        <label>
-          <span>Expiration (MM/YYYY)</span>
-          <input type="text" size="2" data-stripe="exp-month"/>
-        </label>
-        <span> / </span>
-        <input type="text" size="4" data-stripe="exp-year"/>
-      </div>
-
-      <button type="submit">Submit Payment</button>
-    </form> -->
   </div>
 </div>

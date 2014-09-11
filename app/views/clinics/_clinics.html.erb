@@ -6,11 +6,11 @@
 
 <div class="container">
 
-  <% if flash[:alert] != nil %>
-    <div class="col-xs-10 col-xs-offset-1 bottom-margin">
-      <p class="alert"><%= flash[:alert] %></p>
-    </div>
-  <% end %>
+  <%# if flash[:alert] != nil %>
+  <!--   <div class="col-xs-10 col-xs-offset-1 bottom-margin">
+      <p class="alert"><%#= flash[:alert] %></p>
+    </div> -->
+  <%# end %>
 
   <% if @clinics == [] %>
     <div class="col-xs-10 col-offset-3 bottom-margin">
@@ -24,10 +24,17 @@
         <p>Date: <%= clinic.date_time %></p>
         <p><%= clinic.location_street_one %>, <%= clinic.city %>, <%= clinic.state %></p>
         <p>Spots Taken: <%= clinic.total_spots - clinic.remaining_spots %></p>
-        <p>Remaining Slots: <%= clinic.remaining_spots %></p>
+        <% if clinic.remaining_spots > 0 %>
+          <p>Remaining Slots: <%= clinic.remaining_spots %></p>
+        <% else %>
+          <p class="red-text">Remaining Slots: <%= clinic.remaining_spots %></p>
+        <% end %>
         <% if current_user != nil && current_user.admin %>
-          <%= button_to 'edit', edit_clinic_path(clinic), :method => 'get', class: 'btn btn-info float-left' %>
-          <%= button_to "delete", clinic, :method => 'delete', class: 'btn btn-danger float-left' %>
+          <% if clinic.date_time > DateTime.now %>
+            <%= button_to 'edit', edit_clinic_path(clinic), :method => 'get', class: 'btn btn-info float-left' %>
+            <%= button_to "delete", clinic, :method => 'delete', class: 'btn btn-danger float-left' %>
+          <% end %>
+            <%= button_to "view students", root_path, method: 'get', class: 'btn btn-primary float-left' %>
         <% else %>
           <%= link_to 'buy', new_student_path(:clinic_id => clinic.id) %>
         <% end %>
