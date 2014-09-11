@@ -245,3 +245,13 @@ p {
   background: blue;
 }
 
+#stripe_error {
+  color: red;
+  padding: 2em;
+}
+
+.field_with_errors {
+  padding: 2px;
+  color: red;
+  display: table;
+}
