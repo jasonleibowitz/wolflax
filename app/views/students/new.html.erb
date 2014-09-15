@@ -65,6 +65,12 @@
         <%= f.text_field :email %>
       </div>
 
+      <div class="field">
+        <%= f.label :age %>
+        <%#= f.number_field :age %>
+        <%= f.select :age, ((10..18).map {|i| [i,i]}) %>
+      </div>
+
       <% if @student.stripe_card_token %>
         <p>Credit Card has been provided</p>
       <% else %>
