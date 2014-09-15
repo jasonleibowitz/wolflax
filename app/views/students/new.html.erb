@@ -42,19 +42,27 @@
     <h1><%= @student.clinic.name %></h1>
     <h5><%= @student.clinic.date_time.strftime "%A %b %e, %Y at %l:%M %P" %></h5>
     <hr>
-    <p><%= @student.clinic.location_name %></p>
-    <p><%= ENV["TEST_KEY"] %></p>
-    <p><%= @student.clinic.description %></p>
+    <p><span class="bold">Location</span>: <%= @student.clinic.location_name %> <br>
+      <% if @student.clinic.location_street_two.nil? %>
+        <%= @student.clinic.location_street_one %> <br>
+      <% else %>
+        <%= @student.clinic.location_street_one %>, <%= @student.clinic.location_street_two %> <br>
+      <% end %>
+      <%= @student.clinic.city %>, <%= @student.clinic.state %>
+    </p>
+    <p><span class="bold">Description</span>: <%= @student.clinic.description %></p>
+    <p><span class="bold">Spots Left: </span><%= @student.clinic.remaining_spots %></p>
   </div>
 
-  <div class="col-xs-10 col-xs-offset-1">
-    <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAs8_E-am8GGlwOkoMrFDf79ctnII8LevM
+  <div class="col-xs-5 col-xs-offset-1 bottom-margin">
+    <button class="checkout-button" data-toggle="modal" data-target="#myModal">Pay with Card</button>
+  </div>
+
+  <div class="col-xs-10 col-xs-offset-1 centered">
+    <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["WOLF_GMAPS_KEY"] %>
     &q=<%= @student.clinic.location_name.split(' ').join('+') %>"></iframe>
   </div>
 
-  <div class="col-xs-5 col-xs-offset-1">
-    <button class="checkout-button" data-toggle="modal" data-target="#myModal">Pay with Card</button>
-  </div>
 <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -123,7 +131,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          <%= f.submit class: 'btn btn-primary' %>
+          <%= f.submit 'Pay', class: 'btn btn-primary' %>
         </div>
               <% end %>
           <% end %>
