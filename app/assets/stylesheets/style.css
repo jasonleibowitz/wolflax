@@ -1,3 +1,7 @@
+body {
+  color: #001A57;
+}
+
 .centered {
   text-align: center;
 }
@@ -28,6 +32,10 @@ p {
 
 .float-left {
   float: left;
+}
+
+.align-right {
+  right: 0;
 }
 
 .btn {
@@ -117,6 +125,12 @@ p {
   margin-top: -20px;
 }
 
+#welcome-img {
+  width: 250px;
+  margin-left: -35px;
+  margin-top: -30px;
+}
+
 .nav-wrap {
   /*display: inline-block;*/
   position: absolute;
@@ -178,6 +192,16 @@ p {
 .profile {
   width: 250px;
   margin: 0 auto;
+}
+
+#manley {
+  margin-left: -40px;
+  margin-top: -25px;
+}
+
+#offit {
+  margin-left: -50px;
+  margin-top: -40px;
 }
 
 .jordan-profile {
