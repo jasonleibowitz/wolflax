@@ -23,7 +23,7 @@
         <p>Location: <%= clinic.location_name %></p>
         <p>Date: <%= clinic.date_time %></p>
         <p><%= clinic.location_street_one %>, <%= clinic.city %>, <%= clinic.state %></p>
-        <p>Spots Taken: <%= clinic.total_spots - clinic.remaining_spots %></p>
+        <p>Spots Taken: <%= clinic.students.length %></p>
         <% if clinic.remaining_spots > 0 %>
           <p>Remaining Slots: <%= clinic.remaining_spots %></p>
         <% else %>

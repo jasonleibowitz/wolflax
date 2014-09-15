@@ -4,7 +4,7 @@ class Clinic < ActiveRecord::Base
   has_many :students
 
   def update_attendance
-    self.remaining_spots -= self.students.length
+    self.remaining_spots = self.total_spots - self.students.length
     self.save!
   end
 
