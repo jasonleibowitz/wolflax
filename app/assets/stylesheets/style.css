@@ -60,7 +60,7 @@ p {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .logo {
@@ -71,6 +71,45 @@ p {
   margin-left: 1em;
   color: white;
   z-index: 1;
+}
+
+.headline-wrap {
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+  height: 65%;
+}
+
+.headline-wrap:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  /*margin-right: -0.25em;*/
+}
+
+.headline {
+  display: inline-block;
+  vertical-align: middle;
+  color: #001A57;
+  font-family: Circular, "Helvetica-Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.headline h1 {
+  font-size: 4em;
+  font-weight: 500;
+  /*letter-spacing: .0009em;*/
+  letter-spacing: -2px;
+  line-height: 1.1;
+  text-rendering: optimizelegibility;
+  /*-webkit-text-stroke: 2px #001A57;*/
+}
+
+.headline h3 {
+  font-size: 3em;
+  font-weight: 900;
+  /*-webkit-text-stroke: 2px #001A57;*/
 }
 
 .logo-nav {
