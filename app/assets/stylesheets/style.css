@@ -257,6 +257,10 @@ p {
   padding-bottom: 1em;
 }
 
+.sponsor-logo {
+  width: 200px;
+}
+
 .fa-facebook:hover {
   color: RGB(59, 87, 157);
 }
