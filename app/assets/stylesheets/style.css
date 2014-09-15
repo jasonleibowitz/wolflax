@@ -165,6 +165,7 @@ p {
 
 .answer {
   display: none;
+  color: grey;
 }
 
 .footer {
