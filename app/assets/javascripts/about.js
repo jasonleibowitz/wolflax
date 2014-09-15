@@ -5,6 +5,23 @@ $('.home.about').ready(function(){
   $('#jordan-button').click(showJordan);
   $('#staff-button').click(showStaff);
 
+    $("#owl-demo").owlCarousel({
+
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true,
+      autoPlay: true
+
+      // "singleItem:true" is a shortcut for:
+      // items : 1,
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+
+    });
+
 });
 
 function showAbout(){
