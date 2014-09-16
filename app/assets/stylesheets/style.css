@@ -216,23 +216,14 @@ p {
 }
 
 .profile {
-  width: 250px;
+  width: 400px;
   margin: 0 auto;
 }
 
-#lawson {
-  margin-left: -20px;
-}
-
 #manley {
-  margin-left: -40px;
-  margin-top: -80px;
-  width: 300px;
-}
-
-#offit {
-  margin-left: -15px;
-  /*margin-top: -40px;*/
+  margin-left: -20px;
+  margin-top: -50px;
+  width: 500px;
 }
 
 .jordan-profile {
