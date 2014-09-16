@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<%= root_path %>"><%= image_tag 'logo_duke.png', class: 'logo-nav' %></a>
+      <a class="navbar-brand" href="<%= root_path %>"><%= image_tag 'logo_blue.png', class: 'logo-nav' %></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -45,11 +45,11 @@
     </div>
   </div>
   <div class="hero-img-wrap">
-    <%= image_tag 'logo_duke.png', class: 'logo' %>
+    <%= image_tag 'logo_blue.png', class: 'logo' %>
     <div class="hero-img-overlay"></div>
   </div>
   <div class="nav-wrap">
-    <a href="/about"><button type="button" class="btn btn-default nav-button vcenter"><i class="fa fa-github"></i> about</button></a>
+    <a href="/about"><button type="button" class="btn btn-default nav-button vcenter"><i class="fa fa-info-circle"></i> about</button></a>
     <a href="/clinics"><button type="button" class="btn btn-default nav-button"><%= image_tag 'clinic.svg', class: 'button-icon' %> clinics</button></a>
     <a href="/faq"><button type="button" class="btn btn-default nav-button"><i class="fa fa-comment"></i> FAQ</button></a>
     <a href="/contact"><button type="button" class="btn btn-default nav-button"><i class="fa fa-envelope"></i> Contact</button></a>
@@ -63,7 +63,7 @@
   </div>
 
   <div class="col-xs-10 col-xs-offset-1 centered">
-    <h1>Welcome to Wolf Lacrosse</h1>
+    <h1 class="bottom-margin">Welcome to Wolf Lacrosse</h1>
     <div class="col-xs-7">
       <p class="justify">Wolf Lacrosse is a one-of-a-kind lacrosse experience for young players that specializes on player positions and development. We have gathered some of the best players in the world to give young lacrosse players a competitive edge. At Wolf Lacrosse Clinics, you will improve your lacrosse IQ, skills, fundamentals, and worth ethic through a highly structured and efficient lacrosse program. There is always room for improvement. There is no offseason!</p>
     </div>
@@ -75,12 +75,23 @@
   </div>
 
   <div class="col-xs-10 col-xs-offset-1 centered">
-    <h1>Upcoming Clinics</h1>
-    <p class="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur repellat, error inventore, molestiae enim dolores tenetur, consequatur eligendi dignissimos voluptas ut. Alias asperiores dolores totam dolor accusantium atque soluta cumque.</p>
-    <p class="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime porro voluptates id libero. Pariatur vero delectus sunt cum, reiciendis dolores nihil eligendi perferendis id, hic aliquam accusamus tempora fugiat nisi.</p>
-    <p class="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime porro voluptates id libero. Pariatur vero delectus sunt cum, reiciendis dolores nihil eligendi perferendis id, hic aliquam accusamus tempora fugiat nisi.</p>
+      <h1 class="bottom-margin-small">Upcoming Clinics</h1>
+    <div class="col-xs-7">
+      <p class="bottom-margin">Sign up for one of our upcoming clinics!</p>
+      <% @clinics.each do |clinic| %>
+          <h3 class="left-align"><%= clinic.name %></h3>
+          <p><%= clinic.description %></p>
+          <p><%= clinic.date_time.strftime "%A %b %e at %l:%M %p" %> - <%= clinic.location_name %></p>
+          <p><%= link_to 'Click for more info', new_student_path(:clinic_id => clinic.id) %></p>
+      <% end %>
+    </div>
+    <div class="col-xs-4 col-xs-offset-1 align-right">
+      <div class="col-xs-3 bottom-margin">
+        <div class="profile-wrap" id="upcoming-wrap">
+          <%= image_tag 'jordan_shooting.png', id: 'upcoming-img' %>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-xs-10 col-xs-offset-1 centered">
-    <h1>Pictures</h1>
-  </div>
+
 </div>

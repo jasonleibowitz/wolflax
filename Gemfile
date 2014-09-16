@@ -47,4 +47,6 @@ gem "binding_of_caller"
 gem "paperclip", "~> 4.2"
 gem 'devise'
 gem 'rails_12factor', group: :production
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem "figaro"
 ruby '2.1.0'

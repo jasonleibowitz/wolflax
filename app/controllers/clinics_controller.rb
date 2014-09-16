@@ -1,6 +1,6 @@
 class ClinicsController < ApplicationController
 
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @clinics = Clinic.where("date_time > ?", DateTime.now).order(date_time: :asc)
@@ -8,6 +8,11 @@ class ClinicsController < ApplicationController
 
   def adminview
     @clinics = Clinic.order(date_time: :desc)
+  end
+
+  def show
+    @clinic = Clinic.find(params[:id])
+    @student = Student.new
   end
 
   def new
