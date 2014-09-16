@@ -5,20 +5,14 @@
 </script>
 
 <div class="container">
-
-  <%# if flash[:alert] != nil %>
-  <!--   <div class="col-xs-10 col-xs-offset-1 bottom-margin">
-      <p class="alert"><%#= flash[:alert] %></p>
-    </div> -->
-  <%# end %>
-
+  <div class="col-xs-6 col-xs-offset-3 clinic-wrap">
   <% if @clinics == [] %>
     <div class="col-xs-10 col-offset-3 bottom-margin">
       <p class="red-text">There are currently no scheduled clinics.</p>
     </div>
   <% else %>
     <% @clinics.each do |clinic| %>
-      <div class="col-xs-10 col-xs-offset-2 bottom-margin">
+      <div class="col-xs-12 bottom-margin">
         <p><span class="bold"><%= clinic.name %></span> - <%= number_to_currency(clinic.price) %></p>
         <p><span class="bold">Location</span>: <%= clinic.location_name %></p>
         <p><span class="bold">Date</span>: <%= clinic.date_time %></p>
@@ -39,9 +33,10 @@
         <% else %>
           <%= link_to 'buy', new_student_path(:clinic_id => clinic.id), class: 'btn btn-primary' %>
         <% end %>
+      <hr class="black-lines">
       </div>
     <% end %>
   <% end %>
-
+  </div>
 </div>
 
