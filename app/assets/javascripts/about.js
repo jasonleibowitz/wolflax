@@ -5,6 +5,12 @@ $('.home.about').ready(function(){
   $('#jordan-button').click(showJordan);
   $('#staff-button').click(showStaff);
 
+  if (window.location.search == "?q=jordan") {
+    showJordan();
+  } else if (window.location.search == "?q=staff") {
+    showStaff();
+  }
+
 });
 
 function showAbout(){
