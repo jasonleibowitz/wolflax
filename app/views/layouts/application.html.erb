@@ -4,12 +4,13 @@
   <title>WolflaxApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "https://js.stripe.com/v2/", 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= tag :meta, :name => "stripe-key", :content => 'pk_test_zPWECKnej44Flev2zwZDcznJ' %>
 </head>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
 
-<%= yield %>
+  <%= yield %>
 
 <div class="container-fluid footer">
   <div class="col-xs-2 col-xs-offset-3">
