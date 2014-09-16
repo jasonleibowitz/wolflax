@@ -378,3 +378,9 @@ p {
 .modal-footer {
   border-top: 0;
 }
+
+#owl-demo .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
