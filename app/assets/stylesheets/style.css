@@ -318,6 +318,10 @@ p {
   color: red;
 }
 
+.fa-info-circle {
+  margin-right: .25em;
+}
+
 .footer .last-icon {
   padding-right: 0;
 }
