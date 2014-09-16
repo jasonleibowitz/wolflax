@@ -67,16 +67,20 @@
 </div>
 
 <div class="container" id="jordan">
-  <div class="col-xs-6 col-xs-offset-3">
+  <div class="col-xs-6 col-xs-offset-3 bottom-margin">
     <h1>About Jordan</h1>
   </div>
-  <div class="col-xs-10 col-xs-offset-1">
+  <div class="col-xs-10 col-xs-offset-1 bottom-margin">
     <div class="profile-wrap-jordan">
       <%= image_tag 'jordan.png', class: 'jordan-profile' %>
     </div>
   </div>
-  <div class="col-xs-6 col-xs-offset-3" id="jordan-bio">
-    <p>Native of Philadelphia, PA. Attended Lower Merion high school and played Varsity Soccer, Ice Hockey, and Lacrosse. Finished career with 183 goals while establishing school records for career points (332) and assists (149). Played club lacrosse for the Dukes Lacrosse club.</p>
+  <div class="col-xs-3 col-xs-offset-1">
+    <%= image_tag 'jordan_action.png', id: 'jordan-action' %>
+  </div>
+  <div class="col-xs-6 col-xs-offset-1" id="jordan-bio">
+    <p>Jordan, a native of Philadelphia, PA, attended Lower Merion high school where he played Varsity Soccer, Ice Hockey, and Lacrosse. Jordan finished his lacrosse career with 183 goals, while establishing school records for career points (332) and assists (149). Jordan played club lacrosse for the Dukes Lacrosse club. Jordan currently players for the Rochester Rattlers.</p>
+    <h5>Notable Accomplishments:</h5>
     <ul>
       <li>2014- 2014 National Champion, USILA 1st Team All American, All-ACC Selection, ACC Offesinve Player of the Year, 2014 NCAA Tournament MVP, 2014 ACC Scholar Athlete of the Year, Tewaarton Finalist.</li>
       <li>2013- 2013 National Champion, USILA 2nd Team All American, All-ACC Selection, Voted to NCAA and ACC All-Tournament Teams</li>
@@ -90,16 +94,24 @@
 <div class="container" id="staff">
   <div class="col-xs-8 col-xs-offset-2 staff">
     <h1 class="bottom-margin">Our Staff</h1>
-    <div class="profile-wrap">
-      <%= image_tag 'david_lawson.png', class: 'profile', id: 'lawson' %>
+  </div>
+
+  <div class="col-xs-8 col-xs-offset-2 staff ">
+    <div class="col-xs-4">
+      <div class="profile-wrap">
+        <%= image_tag 'david_lawson.png', class: 'profile', id: 'lawson' %>
+      </div>
     </div>
-    <h2>Dave Lawson, Midfield</h2>
-    <p>Native of Boston Massachusets.</p>
-    <ul>
-      <li>2010 and 2013 NCAA Champion</li>
-      <li>2013 USILA All American, All ACC Selection</li>
-      <li>USA World Team Member</li>
-    </ul>
+    <div class="col-xs-7 col-xs-offset-1 left-margin">
+      <h2>Dave Lawson, Midfield</h2>
+      <p>Native of Boston Massachusets. Currently plays for the Rochester Rattlers.</p>
+      <h5>Notable Accomplishments:</h5>
+      <ul>
+        <li>2010 and 2013 NCAA Champion</li>
+        <li>2013 USILA All American, All ACC Selection</li>
+        <li>USA World Team Member</li>
+      </ul>
+    </div>
   </div>
 
   <div class="col-xs-8 col-xs-offset-2 staff">
@@ -107,7 +119,8 @@
       <%= image_tag 'michael_manley.png', class: 'profile', id: 'manley' %>
     </div>
     <h2>Mike Manley, Defense</h2>
-    <p> Native of Penn Yan New York.</p>
+    <p> Native of Penn Yan New York. Currently plays for the Rochester Rattlers.</p>
+    <h5>Notable Accomplishments:</h5>
     <ul>
       <li>2010 NCAA National Champion</li>
       <li>2010 3rd Team USILA All American, All ACC Selection</li>
@@ -116,14 +129,21 @@
   </div>
 
 <div class="col-xs-8 col-xs-offset-2 staff">
+  <div class="col-xs-4">
     <div class="profile-wrap">
       <%= image_tag 'josh_offit.png', class: 'profile', id: 'offit' %>
     </div>
-    <h2>Josh Offit, Attach/Midfield</h2>
+  </div>
+
+  <div class="col-xs-7 col-xs-offset-1">
+    <h2>Josh Offit, Attack/Midfield</h2>
     <p>Native of Washington DC.</p>
+    <h5>Notable Accomplishments:</h5>
     <ul>
       <li>2010 and 2013 NCAA Champion</li>
       <li>2013 USILA All American Third Team Selection</li>
     </ul>
   </div>
+</div>
+
 </div>

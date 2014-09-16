@@ -2,6 +2,19 @@ body {
   color: #001A57;
 }
 
+.red {
+  background: red;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.left-align {
+  text-align: left;
+}
+
+
 .centered {
   text-align: center;
 }
@@ -213,6 +226,11 @@ p {
   text-align: center;
   width: 400px;
   margin-left: -130px;
+}
+
+#jordan-action {
+  width: 250px;
+
 }
 
 #jordan-bio {
