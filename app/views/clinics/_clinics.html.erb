@@ -20,14 +20,15 @@
     <% @clinics.each do |clinic| %>
       <div class="col-xs-10 col-xs-offset-2 bottom-margin">
         <p><span class="bold"><%= clinic.name %></span> - <%= number_to_currency(clinic.price) %></p>
-        <p>Location: <%= clinic.location_name %></p>
-        <p>Date: <%= clinic.date_time %></p>
+        <p><span class="bold">Location</span>: <%= clinic.location_name %></p>
+        <p><span class="bold">Date</span>: <%= clinic.date_time %></p>
+        <p><span class="bold">Description</span>: <%= clinic.description %></p>
         <p><%= clinic.location_street_one %>, <%= clinic.city %>, <%= clinic.state %></p>
-        <p>Spots Taken: <%= clinic.students.length %></p>
+        <p><span class="bold">Spots Taken</span>: <%= clinic.students.length %></p>
         <% if clinic.remaining_spots > 0 %>
-          <p>Remaining Slots: <%= clinic.remaining_spots %></p>
+          <p><span class="bold">Remaining Spots</span>: <%= clinic.remaining_spots %></p>
         <% else %>
-          <p class="red-text">Remaining Slots: <%= clinic.remaining_spots %></p>
+          <p class="red-text">Remaining Spots: <%= clinic.remaining_spots %></p>
         <% end %>
         <% if current_user != nil && current_user.admin %>
           <% if clinic.date_time > DateTime.now %>
