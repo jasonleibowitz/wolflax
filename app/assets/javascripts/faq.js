@@ -1,4 +1,5 @@
-$('home.faq').ready(function(){
+$('.home.faq').ready(function(){
+  console.log('faq');
 
   // faq animation logic
   $('.faq-question').click(function(){
