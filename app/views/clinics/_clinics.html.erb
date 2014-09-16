@@ -36,7 +36,7 @@
           <% end %>
             <%= link_to 'view students', students_path(:clinic_id => clinic.id), class: 'btn btn-primary' %>
         <% else %>
-          <%= link_to 'buy', new_student_path(:clinic_id => clinic.id) %>
+          <%= link_to 'buy', new_student_path(:clinic_id => clinic.id), class: 'btn btn-primary' %>
         <% end %>
       </div>
     <% end %>
