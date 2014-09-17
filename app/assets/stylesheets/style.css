@@ -27,6 +27,10 @@ body {
   margin-bottom: 2em;
 }
 
+.top-margin {
+  margin-top: 2em;
+}
+
 .bottom-margin-small {
   margin-bottom: 1em;
 }
