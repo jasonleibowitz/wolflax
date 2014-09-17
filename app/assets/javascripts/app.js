@@ -1,5 +1,5 @@
 $(window).bind("load", function() {
-  console.log('loaded bro');
+  // console.log('loaded bro');
 
    var footerHeight = 0;
        footerTop = 0;
