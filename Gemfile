@@ -49,4 +49,5 @@ gem 'devise'
 gem 'rails_12factor', group: :production
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem "figaro"
+gem 'rb-readline'
 ruby '2.1.0'
