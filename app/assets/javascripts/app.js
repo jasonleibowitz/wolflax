@@ -39,7 +39,7 @@ function msieversion() {
 
         if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer, return version number
             // alert(parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
-          alert('This website works best in any other browser: Safari, Firefox, Chrome. Please visit it using one of those browsers.');
+          alert('You are currently using Internet Explorer version ' + parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))) + '. This website requires IE version 10 or higher. Please upgrade or user another browser.');
         else                 // If another browser, return 0
             // alert('otherbrowser');
 
