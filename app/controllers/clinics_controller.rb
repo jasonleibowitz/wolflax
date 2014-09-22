@@ -21,7 +21,6 @@ class ClinicsController < ApplicationController
   def create
     @clinic = Clinic.new(clinic_params)
     if @clinic.valid?
-      binding.pry
       @clinic.date_time = Chronic.parse(params[:clinic][:date_time])
       @clinic.remaining_spots = @clinic.total_spots
       @clinic.save!
