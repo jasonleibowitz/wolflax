@@ -1,6 +1,8 @@
 class ClinicsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
+  validates :name, :price, :date_time, :description, :location_name, :location_street_one, :city, :state, :zipcode, :total_spots, presence: true
+  validates :price, :total_spots, numericality: true
 
   def index
     @clinics = Clinic.where("date_time > ?", DateTime.now).order(date_time: :asc)
