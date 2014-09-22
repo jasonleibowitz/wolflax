@@ -18,11 +18,13 @@
         <p><span class="bold">Date</span>: <%= clinic.date_time.strftime "%A %B %e at %l:%M %P" %></p>
         <p><span class="bold">Description</span>: <%= clinic.description %></p>
         <p><%= clinic.location_street_one %>, <%= clinic.city %>, <%= clinic.state %></p>
-        <p><span class="bold">Spots Taken</span>: <%= clinic.students.length %></p>
-        <% if clinic.remaining_spots > 0 %>
-          <p><span class="bold">Remaining Spots</span>: <%= clinic.remaining_spots %></p>
-        <% else %>
-          <p class="red-text">Remaining Spots: <%= clinic.remaining_spots %></p>
+        <% if current_user != nil && current_user.admin %>
+          <p><span class="bold">Spots Taken</span>: <%= clinic.students.length %></p>
+          <% if clinic.remaining_spots > 0 %>
+            <p><span class="bold">Remaining Spots</span>: <%= clinic.remaining_spots %></p>
+          <% else %>
+            <p class="red-text">Remaining Spots: <%= clinic.remaining_spots %></p>
+          <% end %>
         <% end %>
         <% if current_user != nil && current_user.admin %>
           <% if clinic.date_time > DateTime.now %>
@@ -31,7 +33,11 @@
           <% end %>
             <%= link_to 'view students', students_path(:clinic_id => clinic.id), class: 'btn btn-primary' %>
         <% else %>
-          <%= link_to 'buy', new_student_path(:clinic_id => clinic.id), class: 'btn btn-primary' %>
+          <% if clinic.sold_out? || clinic.expired? %>
+            <button class="btn btn-danger">Sold Out</button>
+          <% else %>
+            <%= link_to 'buy', new_student_path(:clinic_id => clinic.id), class: 'btn btn-primary' %>
+          <% end %>
         <% end %>
       <hr class="black-lines">
       </div>
