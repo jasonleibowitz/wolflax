@@ -1,4 +1,14 @@
 <div class="container">
+  <div class="col-xs-6 col-xs-offset-3 red-text">
+    <% if @clinic.errors.any? %>
+      <p>Please correct the following errors:</p>
+      <ul>
+      <% @clinic.errors.full_messages.each do |error_message| %>
+        <li><%= error_message %></li>
+      <% end %>
+      </ul>
+    <% end %>
+  </div>
   <div class="col-xs-6 col-xs-offset-3">
       <%= form_for @clinic do |f| %>
       <div class="form-group">

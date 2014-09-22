@@ -1,8 +1,5 @@
 class ClinicsController < ApplicationController
-
   before_action :authenticate_user!, except: [:index, :show]
-  validates :name, :price, :date_time, :description, :location_name, :location_street_one, :city, :state, :zipcode, :total_spots, presence: true
-  validates :price, :total_spots, numericality: true
 
   def index
     @clinics = Clinic.where("date_time > ?", DateTime.now).order(date_time: :asc)
@@ -23,10 +20,16 @@ class ClinicsController < ApplicationController
 
   def create
     @clinic = Clinic.new(clinic_params)
-    @clinic.remaining_spots = @clinic.total_spots
-    @clinic.save!
-    flash[:alert] = "#{@clinic.name} has been created successfully."
-    redirect_to clinics_path
+    if @clinic.valid?
+      binding.pry
+      @clinic.date_time = Chronic.parse(params[:clinic][:date_time])
+      @clinic.remaining_spots = @clinic.total_spots
+      @clinic.save!
+      flash[:alert] = "#{@clinic.name} has been created successfully."
+      redirect_to clinics_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -36,9 +39,12 @@ class ClinicsController < ApplicationController
   def update
     @clinic = Clinic.find(params[:id])
     @clinic.update(clinic_params)
-    if @clinic.save!
+    if @clinic.valid?
+      @clinic.save!
       flash[:alert] = "#{@clinic.name} has been updated successfully."
       redirect_to clinics_path
+    else
+      render :new
     end
   end
 
