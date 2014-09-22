@@ -80,4 +80,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Include all helpers, for states helper
+  config.action_controller.include_all_helpers = true
+
 end

@@ -34,4 +34,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Include all helpers. For states helper
+  config.action_controller.include_all_helpers = true
 end
