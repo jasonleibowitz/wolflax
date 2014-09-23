@@ -13,7 +13,7 @@
   <% else %>
     <% @clinics.each do |clinic| %>
       <div class="col-xs-12 bottom-margin">
-        <p><span class="bold"><%= clinic.name %></span> - <%= number_to_currency(clinic.price) %></p>
+        <p><span class="bold"><%= link_to clinic.name, new_student_path(:clinic_id => clinic.id) %></span> - <%= number_to_currency(clinic.price) %></p>
         <p><span class="bold">Location</span>: <%= clinic.location_name %></p>
         <p><span class="bold">Date</span>: <%= clinic.date_time.strftime "%A %B %e at %l:%M %P" %></p>
         <p><span class="bold">Description</span>: <%= clinic.description %></p>
