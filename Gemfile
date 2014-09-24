@@ -14,6 +14,10 @@ group :development do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0.0'
 end
+group :test do
+  gem 'shoulda-matchers', require: false
+  gem 'simplecov', :require => false
+end
 gem "binding_of_caller"
 gem "paperclip", "~> 4.2"
 gem 'devise'
