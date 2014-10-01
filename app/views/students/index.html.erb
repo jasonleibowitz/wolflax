@@ -48,7 +48,7 @@
   <div class="col-xs-10 col-xs-offset-2">
     <ol>
       <% @students.each do |student| %>
-        <li><a href="mailto:<%= student.email %>"><%= student.name %></a>, <%= student.age %></li>
+        <li><a href="mailto:<%= student.email %>"><%= student.name %></a>, <%= student.position %>, <%= student.age %></li>
       <% end %>
     </ol>
   </div>

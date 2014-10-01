@@ -104,6 +104,12 @@
                   <%= f.select :age, ((10..18).map {|i| [i,i]}), class: 'form-control' %>
                 </div>
 
+                <div class="form_group bottom-margin-small">
+                  <%= f.label :position %>
+                  <%#= f.number_field :age %>
+                  <%= f.select :position, options_for_select([['Attacker', 'Attacker'], ['Midfielder', 'Midfielder'], ['Defender', 'Defender'], ['Goalie', 'Goalie']], 'Attacker'), class: 'form-control' %>
+                </div>
+
                 <% if @student.stripe_card_token %>
                   <p>Credit Card has been provided</p>
                 <% else %>
