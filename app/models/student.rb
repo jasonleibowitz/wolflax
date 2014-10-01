@@ -1,6 +1,6 @@
 class Student < ActiveRecord::Base
   belongs_to :clinic
-  validates :email, presence: true
+  validates :email, :position, presence: true
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 
   attr_accessor :stripe_card_token, :amount
