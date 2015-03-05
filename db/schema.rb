@@ -11,10 +11,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001011417) do
+ActiveRecord::Schema.define(version: 20150305025709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "campers", force: true do |t|
+    t.string  "first_name"
+    t.string  "last_name"
+    t.integer "age"
+    t.date    "dob"
+    t.string  "street_address_one"
+    t.string  "street_address_two"
+    t.string  "city"
+    t.string  "state"
+    t.integer "zipcode"
+    t.string  "team_name"
+    t.string  "position"
+    t.integer "experience"
+    t.integer "mobile_phone"
+    t.string  "email"
+    t.string  "insurance_company_name"
+    t.string  "insurance_policy_number"
+    t.string  "insurance_policyholder"
+    t.string  "mother_first_name"
+    t.string  "mother_last_name"
+    t.string  "mother_email"
+    t.integer "mother_phone"
+    t.string  "father_first_name"
+    t.string  "father_last_name"
+    t.string  "father_email"
+    t.integer "father_phone"
+    t.boolean "waiver_signed"
+    t.integer "camp_id"
+    t.string  "stripe_charge_token"
+  end
+
+  create_table "camps", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.decimal  "price"
+    t.datetime "date_time"
+    t.string   "location_name"
+    t.string   "location_street_one"
+    t.string   "location_street_two"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zipcode"
+    t.integer  "total_spots"
+    t.integer  "remaining_spots"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "clinics", force: true do |t|
     t.string   "name"
