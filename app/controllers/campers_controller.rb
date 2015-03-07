@@ -10,12 +10,14 @@ class CampersController < ApplicationController
   end
 
   def new
-    @camp = Camp.find(params[:camp_id])
-    @camper = @camp.campers.build
+    @camps = Camp.all
+    @camper = Camper.new
   end
 
   def create
     @camper = Camper.new(camper_params)
+    @camps = Camp.all
+    # (amount: @camper.camp.price.to_i * 100)
     if @camper.save_with_payment
       redirect_to @camper.camp, :notice => "Thank you for your purchase. We look forward to seeing you!"
     else
@@ -25,7 +27,7 @@ class CampersController < ApplicationController
 
   private
   def camper_params
-    params.require(:camper).permit(:name, :email, :stripe_card_token, :amount, :camp_id, :age, :position)
+    params.require(:camper).permit(:first_name, :last_name, :age, :dob, :street_address_one, :street_address_two, :city, :state, :zipcode, :team_name, :position, :experience, :mobile_phone, :email, :insurance_company_name, :insurance_policy_number, :insurance_policyholder, :mother_first_name, :mother_last_name, :mother_email, :mother_phone, :father_first_name, :father_last_name, :father_email, :father_phone, :waiver_signed, :camp_id, :stripe_card_token)
   end
   def camp_id
     params.permit(:camp)

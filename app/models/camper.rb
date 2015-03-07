@@ -7,11 +7,12 @@ class Camper < ActiveRecord::Base
 
   def save_with_payment
     if valid?
+      binding.pry
       charge = Stripe::Charge.create(
-        :amount => amount.to_i,
+        :amount => self.camp.price.to_i * 100,
         :currency => 'usd',
         :card => stripe_card_token,
-        :description => "#{name}'s purcahse of #{camp.name} on #{camp.date_time.strftime "%b %e, %Y at %l:%M %p"}.",
+        :description => "#{first_name} #{last_name}'s purcahse of #{camp.name} on #{camp.starting_date.strftime "%b %e, %Y at %l:%M %p"}.",
         :receipt_email => email
         )
       self.stripe_charge_token = charge.id

@@ -27,7 +27,6 @@ class CampsController < ApplicationController
       @camp.location_name = capitalize_each_word(params[:camp][:location_name])
       @camp.city = capitalize_each_word(params[:camp][:city])
       @camp.save!
-      binding.pry
       flash[:alert] = "#{@camp.name} has been created successfully."
       redirect_to camps_path
     else

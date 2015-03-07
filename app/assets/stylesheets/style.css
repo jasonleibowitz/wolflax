@@ -385,6 +385,15 @@ p {
   border: 1px;
 }
 
+a.checkout-button {
+  padding: 10px 12px;
+}
+
+a.checkout-button:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
 .modal-body {
   border-bottom: 0;
 }

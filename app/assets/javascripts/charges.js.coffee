@@ -10,7 +10,7 @@ $ ->
 
 subscription =
   setupForm: ->
-    $('#new_student').submit ->
+    $('#new_camper').submit ->
       $('input[type=submit]').attr('disabled', true)
       if $('#card_number').length
         subscription.processCard()
@@ -24,13 +24,13 @@ subscription =
       cvc: $('#card_code').val()
       expMonth: $('#card_month').val()
       expYear: $("#card_year").val()
-      name: $("#name").val()
+      name: $("#first-name").val() + " " + $("#last-name").val()
     Stripe.createToken(card, subscription.handleStripeResponse)
 
   handleStripeResponse: (status, response) ->
     if status == 200
-      $('#student_stripe_card_token').val(response.id)
-      $('#new_student')[0].submit()
+      $('#camper_stripe_card_token').val(response.id)
+      $('#new_camper')[0].submit()
     else
       $('#stripe_error').text(response.error.message)
       $('input[type=submit]').attr('disabled', false)

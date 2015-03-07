@@ -18,7 +18,7 @@
         <li><a href="/about">About</a></li>
         <li><a href="/about?q=staff">Staff</a></li>
         <li><a href="/about?q=jordan">Jordan</a></li>
-        <li><a href="/register">Register</a></li>
+        <li><a href="<%= new_camper_path %>">Register</a></li>
       </ul>
       <!-- admin section -->
       <% if current_user != nil && current_user.admin %>
@@ -55,7 +55,7 @@
       <a href="/about"><button type="button" class="btn btn-default nav-button vcenter"><i class="fa fa-info-circle"></i> <span class="red-text">about</span></button></a>
       <a href="/about?q=staff"><button type="button" class="btn btn-default nav-button"><i class="fa fa-comment"></i> <span class="red-text">staff</span></button></a>
       <a href="/about?q=jordan"><button type="button" class="btn btn-default nav-button"><i class="fa fa-envelope"></i> <span class="red-text">jordan</span></button></a>
-      <a href="/register"><button type="button" class="btn btn-default nav-button"><i class="fa fa-envelope"></i> <span class="red-text">register</span></button></a>
+      <a href="<%= new_camper_path %>"><button type="button" class="btn btn-default nav-button"><i class="fa fa-envelope"></i> <span class="red-text">register</span></button></a>
     </div>
   </div>
 
@@ -84,7 +84,7 @@
             <h3 class="left-align"><%= camp.name %></h3>
             <p><%= camp.description %></p>
             <p><%= camp.starting_date.strftime "%A %b %e" %> - <%= camp.ending_date.strftime "%A %b %e" %> at <%= camp.location_name %></p>
-            <p><%= link_to 'Click for more info', new_camper_path(:camp_id => camp.id) %></p>
+            <p><%= link_to 'Click for more info', camp_path(camp.id) %></p>
         <% end %>
       </div>
       <div class="col-xs-4 col-xs-offset-1 align-right">

@@ -1,0 +1,185 @@
+<div class="col-xs-10 col-xs-offset-2">
+  <% if flash[:alert] != nil %>
+    <p class="alert"><%= flash[:alert] %></p>
+  <% end %>
+</div>
+
+<div class="col-xs-5 col-xs-offset-1">
+  <%= form_for @camper do |f| %>
+
+  <div class="form_group">
+    <p class="help-block">Which camp are you registering for?</p>
+    <%= f.label :camp_id %>
+    <%= f.select :camp_id, @camps.collect { |c| ["#{c.name}: #{c.starting_date.strftime "%A %b %e, %Y"} - #{c.ending_date.strftime "%A %b %e, %Y"}", c.id] }, :selected => params[:camp_id] || nil %>
+  </div>
+
+    <div class="form_group">
+      <p class="help-block">Camper's information.</p>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, id: 'first-name', class: 'form-control' %>
+    </div>
+
+    <div class="form_group">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, id: 'last-name', class: 'form-control' %>
+    </div>
+
+      <%= f.hidden_field :stripe_card_token %>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :mobile_phone %>
+      <%= f.telephone_field :mobile_phone, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :age %>
+      <%= f.select :age, ((9..18).map {|i| [i,i]}), class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :dob, "Date of Birth" %>
+      <%= f.date_field :dob, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :street_address_one %>
+      <%= f.text_field :street_address_one, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :street_address_two %>
+      <%= f.text_field :street_address_two, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :city %>
+      <%= f.text_field :city, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :state %>
+      <%= f.text_field :state, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :zipcode %>
+      <%= f.number_field :zipcode, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :team_name, "School or Club Team Name" %>
+      <%= f.text_field :team_name, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :position %>
+      <%= f.select :position, options_for_select([['Attack', 'Attack'], ['Midfield', 'Midfield'], ['Defense', 'Defense'], ['Goalie', 'Goalie']]), class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :experience, 'Years of Lacrosse Experience' %>
+      <%= f.number_field :experience, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :insurance_company_name %>
+      <%= f.text_field :insurance_company_name, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :insurance_policy_number %>
+      <%= f.text_field :insurance_policy_number, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :insurance_policyholder, "Insurance Policyholder's Name" %>
+      <%= f.text_field :insurance_policyholder, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <p class="help-block">Camper's Parent/Guardian Information</p>
+      <%= f.label :mother_first_name, "Mother/Guardian First Name" %>
+      <%= f.text_field :mother_first_name, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :mother_last_name, "Mother/Guardian Last Name" %>
+      <%= f.text_field :mother_last_name, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :mother_email, "Mother/Guardian Email" %>
+      <%= f.email_field :mother_email, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :mother_phone, "Mother/Guardian Phone" %>
+      <%= f.telephone_field :mother_phone, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :father_first_name, "Father/Guardian First Name" %>
+      <%= f.text_field :father_first_name, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :father_last_name, "Father/Guardian Last Name" %>
+      <%= f.text_field :father_last_name, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :father_email, "Father/Guardian Email" %>
+      <%= f.email_field :father_email, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :father_phone, "Father/Guardian Phone" %>
+      <%= f.telephone_field :father_phone, class: 'form-control' %>
+    </div>
+
+    <div class="checkbox bottom-margin-small">
+      <label>
+        <%= f.check_box :waiver_signed, { class: 'checkbox' }, "yes", "no" %>
+        By clicking this checkbox I agree that I have read and agree to <%= link_to "Wolflax Camps waiver form", asset_path("waiver_form.pdf") %>.
+      </label>
+    </div>
+
+    <% if @camper.stripe_card_token %>
+      <p>Credit Card has been provided.</p>
+    <% else %>
+
+      <div class="form_group">
+        <%= label_tag :card_number, "Credit Card Number" %>
+        <%= text_field_tag :card_number, nil, name: nil, class: 'form-control' %>
+      </div>
+
+      <div class="form_group bottom-margin">
+        <%= label_tag :card_code, "Security Code on Card (CVV)" %>
+        <%= text_field_tag :card_code, nil, name: nil, class: 'form-control' %>
+      </div>
+
+      <div class="form_group">
+        <%= label_tag :card_month, "Card Expiration" %>
+        <%= select_month nil, {add_month_numbers: true}, {name: nil, id: 'card_month'} %>
+        <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 15}, {name: nil, id: 'card_year'} %>
+      </div>
+    <% end %>
+
+    <div id="stripe_error">
+      <noscript>JavaScript is not enabled and is required for this form. First enable it in your browser settings.</noscript>
+    </div>
+    <div class="field_with_errors">
+      <%= @camper.errors.full_messages.join(', ') %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.submit "Submit", class: 'form-control' %>
+    </div>
+
+  <% end %>
+</div>

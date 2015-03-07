@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150307165904) do
+ActiveRecord::Schema.define(version: 20150307230928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20150307165904) do
     t.string  "team_name"
     t.string  "position"
     t.integer "experience"
-    t.integer "mobile_phone"
     t.string  "email"
     t.string  "insurance_company_name"
     t.string  "insurance_policy_number"
@@ -37,14 +36,15 @@ ActiveRecord::Schema.define(version: 20150307165904) do
     t.string  "mother_first_name"
     t.string  "mother_last_name"
     t.string  "mother_email"
-    t.integer "mother_phone"
     t.string  "father_first_name"
     t.string  "father_last_name"
     t.string  "father_email"
-    t.integer "father_phone"
     t.boolean "waiver_signed"
     t.integer "camp_id"
     t.string  "stripe_charge_token"
+    t.string  "mobile_phone"
+    t.string  "mother_phone"
+    t.string  "father_phone"
   end
 
   create_table "camps", force: true do |t|

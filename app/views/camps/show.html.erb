@@ -38,17 +38,35 @@
 </nav>
 
 <div class="container">
+  <!--<div class="col-xs-10 col-xs-offset-1 alert">
+    <%= notice %>
+  </div> -->
+
   <div class="col-xs-10 col-xs-offset-1">
     <h1><%= @camp.name %></h1>
+    <h5><%= @camp.starting_date.strftime "%A %b %e, %Y" %> - <%= @camp.ending_date.strftime "%A %b %e, %Y" %></h5>
+    <hr>
+    <p><span class="bold">Location</span>: <%= @camp.location_name %> <br>
+      <% if @camp.location_street_two.nil? %>
+        <%= @camp.location_street_one %> <br>
+      <% else %>
+        <%= @camp.location_street_one %>, <%= @camp.location_street_two %>
+      <% end %>
+      <br>
+      <%= @camp.city %>, <%= @camp.state %>
+    </p>
+    <p><span class="bold">Description:</span> <%= @camp.description %></p>
   </div>
 
-  <div class="col-xs-10 col-xs-offset-1 alert">
-    <%= notice %>
+  <div class="col-xs-5 col-xs-offset-1 bottom-margin ">
+    <% unless @camp.expired? %>
+      <%= link_to "Register", new_camper_path(:camp_id => @camp.id), class: 'checkout-button' %>
+    <% end %>
   </div>
 
-  <div class="col-xs-10 col-xs-offset-1">
-    <%= button_to 'home', root_path, method: 'get', class: 'btn btn-primary float-left' %>
-    <%= button_to 'camps', camps_path, method: 'get', class: 'btn btn-primary float-left' %>
+  <div class="col-xs-10 col-xs-offset-1 centered" id="google-map">
+    <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["WOLF_GMAPS_KEY"] %>
+      &q=<%= @camp.location_name.split(' ').join('+') %>"></iframe>
   </div>
 
   </div>

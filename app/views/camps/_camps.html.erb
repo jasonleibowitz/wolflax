@@ -28,11 +28,7 @@
           <% end %>
             <%= link_to 'view campers', campers_path(:camp_id => camp.id), class: 'btn btn-primary' %>
         <% else %>
-          <% if camp.sold_out? || camp.expired? %>
-            <button class="btn btn-danger">Sold Out</button>
-          <% else %>
-            <%= link_to 'buy', new_camper_path(:camp_id => camp.id), class: 'btn btn-primary' %>
-          <% end %>
+          <%= link_to 'more info', camp_path(camp.id), class: 'btn btn-primary' %>
         <% end %>
       <hr class="black-lines">
       </div>
