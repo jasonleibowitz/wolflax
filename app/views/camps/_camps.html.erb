@@ -1,0 +1,43 @@
+<script type="text/javascript">
+  // This identifies your website in the createToken call below
+  Stripe.setPublishableKey('pk_test_zPWECKnej44Flev2zwZDcznJ');
+  // ...
+</script>
+
+<div class="container">
+  <div class="col-xs-6 col-xs-offset-3 clinic-wrap">
+  <% if @camps == [] %>
+    <div class="col-xs-10 col-offset-3 bottom-margin">
+      <p class="red-text">There are currently no scheduled camps.</p>
+    </div>
+  <% else %>
+    <% @camps.each do |camp| %>
+      <div class="col-xs-12 bottom-margin">
+        <p><span class="bold"><%= link_to camp.name, new_camper_path(:camp_id => camp.id) %></span> - <%= number_to_currency(camp.price) %></p>
+        <p><span class="bold">Location</span>: <%= camp.location_name %></p>
+        <p><span class="bold">Date</span>: <%= camp.starting_date.strftime "%A %B %e at %l:%M %P" %></p>
+        <p><span class="bold">Description</span>: <%= camp.description %></p>
+        <p><%= camp.location_street_one %>, <%= camp.city %>, <%= camp.state %></p>
+        <% if current_user != nil && current_user.admin %>
+          <p><span class="bold">Spots Taken</span>: <%= camp.campers.length %></p>
+        <% end %>
+        <% if current_user != nil && current_user.admin %>
+          <% if camp.starting_date > DateTime.now %>
+            <%= button_to 'edit', edit_camp_path(camp), :method => 'get', class: 'btn btn-info float-left' %>
+            <%= button_to "delete", camp, :method => 'delete', class: 'btn btn-danger float-left' %>
+          <% end %>
+            <%= link_to 'view campers', campers_path(:camp_id => camp.id), class: 'btn btn-primary' %>
+        <% else %>
+          <% if camp.sold_out? || camp.expired? %>
+            <button class="btn btn-danger">Sold Out</button>
+          <% else %>
+            <%= link_to 'buy', new_camper_path(:camp_id => camp.id), class: 'btn btn-primary' %>
+          <% end %>
+        <% end %>
+      <hr class="black-lines">
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+</div>
+

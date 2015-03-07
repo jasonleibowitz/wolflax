@@ -14,7 +14,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/clinics">Camps</a></li>
+        <li><a href="/camps">Camps</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/about?q=staff">Staff</a></li>
         <li><a href="/about?q=jordan">Jordan</a></li>
@@ -26,8 +26,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Menu <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="/admin/clinics">Scheduled Clinics</a></li>
-            <li><a href="/clinics/new">Add a Clinic</a></li>
+            <li><a href="/admin/camps">Scheduled Camps</a></li>
+            <li><a href="/camps/new">Add a Camp</a></li>
             <li class="divider"></li>
             <li><%= link_to'Log Out', destroy_user_session_path, method: 'delete' %></li>
           </ul>
@@ -51,7 +51,7 @@
       <div class="hero-img-overlay"></div>
     </div>
     <div class="nav-wrap red-text">
-      <a href="/clinics"><button type="button" class="btn btn-default nav-button"><%= image_tag 'clinic.png', class: 'button-icon' %> <span class="red-text">camps</span></button></a>
+      <a href="/camps"><button type="button" class="btn btn-default nav-button"><%= image_tag 'clinic.png', class: 'button-icon' %> <span class="red-text">camps</span></button></a>
       <a href="/about"><button type="button" class="btn btn-default nav-button vcenter"><i class="fa fa-info-circle"></i> <span class="red-text">about</span></button></a>
       <a href="/about?q=staff"><button type="button" class="btn btn-default nav-button"><i class="fa fa-comment"></i> <span class="red-text">staff</span></button></a>
       <a href="/about?q=jordan"><button type="button" class="btn btn-default nav-button"><i class="fa fa-envelope"></i> <span class="red-text">jordan</span></button></a>
@@ -78,13 +78,13 @@
     </div>
 
     <div class="col-xs-10 col-xs-offset-1 centered">
-        <h1 class="bottom-margin-small">Upcoming Clinics</h1>
+        <h1 class="bottom-margin-small">Upcoming Camps</h1>
       <div class="col-xs-7">
-        <% @clinics.each do |clinic| %>
-            <h3 class="left-align"><%= clinic.name %></h3>
-            <p><%= clinic.description %></p>
-            <p><%= clinic.date_time.strftime "%A %b %e at %l:%M %p" %> - <%= clinic.location_name %></p>
-            <p><%= link_to 'Click for more info', new_student_path(:clinic_id => clinic.id) %></p>
+        <% @camps.each do |camp| %>
+            <h3 class="left-align"><%= camp.name %></h3>
+            <p><%= camp.description %></p>
+            <p><%= camp.starting_date.strftime "%A %b %e" %> - <%= camp.ending_date.strftime "%A %b %e" %> at <%= camp.location_name %></p>
+            <p><%= link_to 'Click for more info', new_camper_path(:camp_id => camp.id) %></p>
         <% end %>
       </div>
       <div class="col-xs-4 col-xs-offset-1 align-right">

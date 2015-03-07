@@ -2,11 +2,11 @@ class CampsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @camps = Camps.where("date_time > ?", DateTime.now).order(date_time: :asc)
+    @camps = Camp.where("starting_date > ?", Date.today).order(starting_date: :asc)
   end
 
   def adminview
-    @camps = Camp.order(date_time: :desc)
+    @camps = Camp.order(starting_date: :desc)
   end
 
   def show
@@ -21,12 +21,13 @@ class CampsController < ApplicationController
   def create
     @camp = Camp.new(camp_params)
     if @camp.valid?
-      @camp.date_time = Chronic.parse(params[:camp][:date_time])
+      # @camp.starting_date = Chronic.parse(params[:camp][:starting_date])
+      # @camp.ending_date = Chronic.parse(params[:camp][:ending_date])
       @camp.name = capitalize_each_word(params[:camp][:name])
       @camp.location_name = capitalize_each_word(params[:camp][:location_name])
       @camp.city = capitalize_each_word(params[:camp][:city])
-      @camp.remaining_spots = @camp.total_spots
       @camp.save!
+      binding.pry
       flash[:alert] = "#{@camp.name} has been created successfully."
       redirect_to camps_path
     else
@@ -59,7 +60,7 @@ class CampsController < ApplicationController
 
   private
   def camp_params
-    params.require(:camp).permit(:name, :price, :description, :date_time, :location_name, :location_street_one, :location_street_two, :city, :state, :zipcode, :total_spots)
+    params.require(:camp).permit(:name, :price, :description, :starting_date, :ending_date, :location_name, :location_street_one, :location_street_two, :city, :state, :zipcode)
   end
 
   def capitalize_each_word(form_string)

@@ -15,22 +15,22 @@
 <div class="container-fluid footer">
   <div class="col-xs-2 col-xs-offset-3">
     <h4>Company</h4>
-    <%= link_to 'Camps', clinics_path %> <br>
+    <%= link_to 'Camps', camps_path %> <br>
     <%= link_to 'About', about_path %> <br>
     <%= link_to 'Jordan', about_path(:q => 'jordan') %> <br>
     <%= link_to 'Staff', about_path(:q => 'staff') %> <br>
     <%= link_to 'Register', contact_path %>
   </div>
   <div class="col-xs-2">
-    <h4>Clinics</h4>
-    <%= link_to 'Upcoming Clinics', clinics_path %> <br>
+    <h4>Camps</h4>
+    <%= link_to 'Upcoming Camps', camps_path %> <br>
     <% if current_user == nil %>
       <%= link_to 'Admin Login', new_user_session_path %> <br>
     <% end %>
     <% if current_user != nil && current_user.admin %>
       <%= link_to 'Admin Log Out', destroy_user_session_path, method: 'delete' %> <br>
-      <%= link_to 'Scheduled Clinics', admin_clinics_path %> <br>
-      <%= link_to 'Add a Clinic', new_clinic_path %>
+      <%#= link_to 'Scheduled Camps', admin_camps_path %> <br>
+      <%= link_to 'Add a Camp', new_camp_path %>
     <% end %>
   </div>
     <div class="col-xs-2">

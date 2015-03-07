@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def welcome
-    @clinics = Clinic.where("date_time > ?", DateTime.now).where("remaining_spots > ?", 0).order(date_time: :asc).limit(3)
+    @camps = Camp.where("starting_date > ?", Date.today).order(starting_date: :asc).limit(3)
   end
 
   def about
