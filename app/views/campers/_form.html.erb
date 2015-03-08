@@ -144,7 +144,7 @@
 
     <div class="checkbox bottom-margin-small">
       <label>
-        <%= f.check_box :waiver_signed, { class: 'checkbox' }, "yes", "no" %>
+        <%= f.check_box :waiver_signed, { class: 'checkbox' }, true, false %>
         By clicking this checkbox I agree that I have read and agree to <%= link_to "Wolflax Camps waiver form", asset_path("waiver_form.pdf") %>.
       </label>
     </div>
