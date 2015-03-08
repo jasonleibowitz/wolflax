@@ -13,7 +13,7 @@
   <% else %>
     <% @camps.each do |camp| %>
       <div class="col-xs-12 bottom-margin">
-        <p><span class="bold"><%= link_to camp.name, new_camper_path(:camp_id => camp.id) %></span> - <%= number_to_currency(camp.price) %></p>
+        <p><span class="bold"><%= link_to camp.name, camp_path(camp) %></span> - <%= number_to_currency(camp.price) %></p>
         <p><span class="bold">Location</span>: <%= camp.location_name %></p>
         <p><span class="bold">Date</span>: <%= camp.starting_date.strftime "%A %B %e at %l:%M %P" %></p>
         <p><span class="bold">Description</span>: <%= camp.description %></p>
@@ -26,11 +26,9 @@
             <%= button_to 'edit', edit_camp_path(camp), :method => 'get', class: 'btn btn-info float-left' %>
             <%= button_to "delete", camp, :method => 'delete', class: 'btn btn-danger float-left' %>
           <% end %>
-            <%= link_to 'view campers', campers_path(:camp_id => camp.id), class: 'btn btn-primary' %>
         <% else %>
           <%= link_to 'more info', camp_path(camp.id), class: 'btn btn-primary' %>
         <% end %>
-      <hr class="black-lines">
       </div>
     <% end %>
   <% end %>

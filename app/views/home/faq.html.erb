@@ -16,10 +16,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><a href="/camps">Camps</a></li>
         <li><a href="/about">About</a></li>
-        <li><a href="/clinics">Clinics</a></li>
-        <li class="active"><a href="/faq">FAQs</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="/about?q=staff">Staff</a></li>
+        <li><a href="/about?q=jordan">Jordan</a></li>
+        <li><a href="<%= new_camper_path %>">Register</a></li>
       </ul>
       <!-- admin section -->
       <% if current_user != nil && current_user.admin %>
