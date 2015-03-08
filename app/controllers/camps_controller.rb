@@ -19,6 +19,11 @@ class CampsController < ApplicationController
     @camp = Camp.find(camp_id)
     @campers = @camp.campers.order(sort_column + " " + sort_direction)
     @camps = Camp.all
+    respond_to do |format|
+      format.html
+      format.csv {send_data @campers.to_csv, filename: "#{@camp.name}_as_of_#{DateTime.now.strftime "%Y-%m-%d_%H:%M:%S"}.csv"}
+      #format.xls {send_data @campers.to_csv(col_sep: "\t"), filename: "#{@camp.name}_as_of_#{DateTime.now.strftime "%Y-%m-%d_%H:%M:%S"}.xls"}
+    end
   end
 
   def new

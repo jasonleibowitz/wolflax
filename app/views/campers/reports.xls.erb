@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>13700</WindowHeight>
+  <WindowWidth>25600</WindowWidth>
+  <WindowTopX>0</WindowTopX>
+  <WindowTopY>0</WindowTopY>
+  <Date1904/>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62">
+   <NumberFormat ss:Format="Short Date"/>
+  </Style>
+  <Style ss:ID="s66">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Color="#000000"/>
+   <NumberFormat ss:Format="0"/>
+  </Style>
+  <Style ss:ID="s67">
+   <NumberFormat ss:Format="0"/>
+  </Style>
+  <Style ss:ID="s68">
+   <NumberFormat ss:Format="[&lt;=9999999]###\-####;\(###\)\ ###\-####"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Shee1">
+  <Table ss:ExpandedColumnCount="29" ss:ExpandedRowCount="4" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="65" ss:DefaultRowHeight="15">
+   <Column ss:Width="61"/>
+   <Column ss:Width="58"/>
+   <Column ss:Width="25"/>
+   <Column ss:Width="53"/>
+   <Column ss:Width="109"/>
+   <Column ss:Width="105"/>
+   <Column ss:Width="77"/>
+   <Column ss:Width="32"/>
+   <Column ss:Width="45"/>
+   <Column ss:Width="67"/>
+   <Column ss:Width="48"/>
+   <Column ss:Width="61"/>
+   <Column ss:Width="136"/>
+   <Column ss:Width="139"/>
+   <Column ss:Width="134"/>
+   <Column ss:Width="121"/>
+   <Column ss:Width="103"/>
+   <Column ss:Width="101"/>
+   <Column ss:Width="136"/>
+   <Column ss:Width="96"/>
+   <Column ss:Width="94"/>
+   <Column ss:Width="123"/>
+   <Column ss:Width="49"/>
+   <Column ss:Width="177"/>
+   <Column ss:Width="82" ss:Span="2"/>
+   <Row>
+    <Cell><Data ss:Type="String">first_name</Data></Cell>
+    <Cell><Data ss:Type="String">last_name</Data></Cell>
+    <Cell><Data ss:Type="String">age</Data></Cell>
+    <Cell><Data ss:Type="String">dob</Data></Cell>
+    <Cell><Data ss:Type="String">street_address_one</Data></Cell>
+    <Cell><Data ss:Type="String">street_address_two</Data></Cell>
+    <Cell><Data ss:Type="String">city</Data></Cell>
+    <Cell><Data ss:Type="String">state</Data></Cell>
+    <Cell><Data ss:Type="String">zipcode</Data></Cell>
+    <Cell><Data ss:Type="String">team_name</Data></Cell>
+    <Cell><Data ss:Type="String">position</Data></Cell>
+    <Cell><Data ss:Type="String">experience</Data></Cell>
+    <Cell><Data ss:Type="String">email</Data></Cell>
+    <Cell><Data ss:Type="String">insurance_company_name</Data></Cell>
+    <Cell><Data ss:Type="String">insurance_policy_number</Data></Cell>
+    <Cell><Data ss:Type="String">insurance_policyholder</Data></Cell>
+    <Cell><Data ss:Type="String">mother_first_name</Data></Cell>
+    <Cell><Data ss:Type="String">mother_last_name</Data></Cell>
+    <Cell><Data ss:Type="String">mother_email</Data></Cell>
+    <Cell><Data ss:Type="String">father_first_name</Data></Cell>
+    <Cell><Data ss:Type="String">father_last_name</Data></Cell>
+    <Cell><Data ss:Type="String">father_email</Data></Cell>
+    <Cell><Data ss:Type="String">waiver_signed</Data></Cell>
+    <Cell><Data ss:Type="String">camp_id</Data></Cell>
+    <Cell><Data ss:Type="String">mobile_phone</Data></Cell>
+    <Cell><Data ss:Type="String">mother_phone</Data></Cell>
+    <Cell><Data ss:Type="String">father_phone</Data></Cell>
+   </Row>
+   <Row>
+    <% @campers.each do |camper| %>
+      <Cell><Data ss:Type="String"><%= camper.first_name %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= camper.last_name %></Data></Cell>
+      <Cell ss:StyleID="s67"><Data ss:Type="Number"><%= camper.age %></Data></Cell>
+      <Cell ss:StyleID="s62"><Data ss:Type="DateTime"><%= camper.dob %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= camper.street_address_one %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= camper.street_address_two %></Data></Cell>
+      <Cell ss:Index="8"><Data ss:Type="String"><%= camper.city %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= camper.state %></Data></Cell>
+      <Cell ss:StyleID="s67"><Data ss:Type="Number"><%= camper.zipcode %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= camper.team_name %></Data></Cell>
+      <Cell><Data ss:Type="String">Defense</Data></Cell>
+      <Cell ss:StyleID="s67"><Data ss:Type="Number"><%= camper.experience %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= camper.email %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= camper.insurance_company_name %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= camper.insurance_policy_number %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= camper.insurance_policyholder %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= camper.mother_first_name %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= camper.mother_last_name %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= camper.mother_email %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= camper.father_first_name %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= camper.father_last_name %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= camper.father_email %></Data></Cell>
+      <Cell><Data ss:Type="Boolean"><%= camper.waiver_signed %></Data></Cell>
+      <Cell><Data ss:Type="Number"><%= camper.camp_id %></Data></Cell>
+      <Cell ss:StyleID="s68"><Data ss:Type="Number"><%= camper.mobile_phone %></Data></Cell>
+      <Cell ss:StyleID="s68"><Data ss:Type="Number"><%= camper.mother_phone %></Data></Cell>
+      <Cell ss:StyleID="s68"><Data ss:Type="Number"><%= camper.father_phone %></Data></Cell>
+    <% end %>
+   </Row>
+  </Table>
+ </Worksheet>
+</Workbook>

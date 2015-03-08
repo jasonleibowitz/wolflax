@@ -56,8 +56,12 @@
         <div class="form-group">
           <%= submit_tag "Submit", {class: 'form-control', id: 'camp-select-submit-button'} %>
         </div>
-
       <% end %>
+      <p>
+        Download:
+        <%= link_to "CSV", camps_reports_path(sort: sort_column, direction: sort_direction, id: @camp.id, format:"csv") %>
+        <%#= link_to "Excel", camps_reports_path(format:"xls") %>
+      </p>
     </div>
   </div>
 
