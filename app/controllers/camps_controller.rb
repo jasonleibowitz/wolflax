@@ -14,6 +14,15 @@ class CampsController < ApplicationController
     @camper = Camper.new
   end
 
+  def reports
+    if params[:id].nil?
+      @camp = Camp.last
+    else
+      @camp = Camp.find(params[:id])
+    end
+    @camps = Camp.all
+  end
+
   def new
     @camp = Camp.new
   end

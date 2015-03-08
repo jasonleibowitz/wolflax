@@ -1,0 +1,38 @@
+  <div class="container">
+    <div class="col-xs-7">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Position</th>
+            <th>Experience</th>
+            <th>Mother's Name</th>
+            <th>Mother's Email</th>
+            <th>Father's Name</th>
+            <th>Father's Email</th>
+          </tr>
+        </thead>
+        <% @camp.campers.each do |camper| %>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><%= camper.first_name %></td>
+            <td><%= camper.last_name %></td>
+            <td><%= camper.email || 'N/A' %></td>
+            <td><%= camper.age %></td>
+            <td><%= camper.position %></td>
+            <td><%= camper.experience %></td>
+            <td><%= "#{camper.mother_first_name} #{camper.mother_last_name}" %></td>
+            <td><%= camper.mother_email %></td>
+            <td><%= "#{camper.father_first_name} #{camper.father_last_name}" %></td>
+            <td><%= camper.father_email %></td>
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>

@@ -19,7 +19,7 @@ class CampersController < ApplicationController
     @camps = Camp.all
     # (amount: @camper.camp.price.to_i * 100)
     if @camper.save_with_payment
-      redirect_to @camper.camp, :notice => "Thank you for your purchase. We look forward to seeing you!"
+      redirect_to root_path, :notice => "Thank you for your purchase. We look forward to seeing you!"
     else
       render :new
     end

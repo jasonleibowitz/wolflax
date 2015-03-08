@@ -7,7 +7,6 @@ class Camper < ActiveRecord::Base
 
   def save_with_payment
     if valid?
-      binding.pry
       charge = Stripe::Charge.create(
         :amount => self.camp.price.to_i * 100,
         :currency => 'usd',
