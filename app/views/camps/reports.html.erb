@@ -52,7 +52,7 @@
       <%= form_tag '/camps/reports', method: 'get', class: 'form-inline', id: 'report-camp-select' do %>
         <div class="form-group">
           <%= label_tag :id, "Filter by Camp: " %>
-          <%= select_tag :id, options_from_collection_for_select(@camps, "id", "name", @camp.id), {class: 'form-control'} %>
+          <%= select_tag :id, options_from_collection_for_select(@camps, "id", "report_name", @camp.id), {class: 'form-control'} %>
         </div>
         <div class="form-group">
           <%= submit_tag "Submit", {class: 'form-control', id: 'camp-select-submit-button'} %>

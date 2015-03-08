@@ -25,4 +25,8 @@ class Camp < ActiveRecord::Base
     end
   end
 
+  def report_name
+    "#{name}: #{starting_date}"
+  end
+
 end
