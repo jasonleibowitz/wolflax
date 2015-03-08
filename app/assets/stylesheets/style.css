@@ -426,14 +426,22 @@ a.checkout-button:hover {
   width: 80%;
 }
 
+.table a:hover {
+  text-decoration: none;
+}
+
 .current.asc:after {
   content: "\f0de";
   font: normal normal normal 14px/1 FontAwesome;
   color: black;
+  padding-left: 5px;
+  vertical-align: middle;
 }
 
 .current.desc:after {
   content: "\f0dd";
   font: normal normal normal 14px/1 FontAwesome;
   color: black;
+  vertical-align: top;
+  padding-left: 5px;
 }
