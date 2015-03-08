@@ -1,7 +1,8 @@
 class Camper < ActiveRecord::Base
   belongs_to :camp
-  validates :email, :position, presence: true
+  validates :first_name, :last_name, :email, :age, :dob, :street_address_one, :city, :state, :zipcode, :experience, :insurance_company_name, :insurance_policy_number, :insurance_policyholder, :mother_first_name, :mother_last_name, :mother_email, :mother_phone, :father_first_name, :father_last_name, :father_phone, :father_email, :position, :waiver_signed, presence: true
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+  validates :waiver_signed, :acceptance => {:accept => true}
 
   attr_accessor :stripe_card_token, :amount
 

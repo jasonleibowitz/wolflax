@@ -369,6 +369,10 @@ p {
   display: table;
 }
 
+.errors {
+  color: red;
+}
+
 .checkout-button {
   min-height: 30px;
   padding: 0 12px;
