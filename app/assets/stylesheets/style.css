@@ -425,3 +425,15 @@ a.checkout-button:hover {
   padding: 0;
   width: 80%;
 }
+
+.current.asc:after {
+  content: "\f0de";
+  font: normal normal normal 14px/1 FontAwesome;
+  color: black;
+}
+
+.current.desc:after {
+  content: "\f0dd";
+  font: normal normal normal 14px/1 FontAwesome;
+  color: black;
+}

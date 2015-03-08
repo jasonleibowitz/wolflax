@@ -82,11 +82,12 @@ class CampsController < ApplicationController
   end
 
   def sort_column
-    ["age", "experience", "position"].include?(params[:sort]) ? params[:sort} : "age"
+    params[:sort] ||= "age"
+    %w[age position experience].include?(params[:sort]) ? params[:sort] : "age"
   end
 
   def sort_direction
-    %w["asc" "desc"].include?(params[:direction]) ? params[:direction] : "asc"
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 
   # Method to increase remaining slots when total slots is updated
