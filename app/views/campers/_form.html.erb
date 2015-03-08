@@ -10,7 +10,7 @@
   <div class="form_group">
     <p class="help-block">Which camp are you registering for?</p>
     <%= f.label :camp_id %>
-    <%= f.select :camp_id, @camps.collect { |c| ["#{c.name}: #{c.starting_date.strftime "%A %b %e, %Y"} - #{c.ending_date.strftime "%A %b %e, %Y"}", c.id] }, :selected => params[:camp_id] || nil %>
+    <%= f.select :camp_id, @camps.collect { |c| ["#{c.name}: #{c.starting_date.strftime "%A %b %e, %Y"} - #{c.ending_date.strftime "%A %b %e, %Y"}", c.id] }, {:selected => params[:camp_id] || nil}, {class: 'form-control'} %>
   </div>
 
     <div class="form_group">
@@ -38,7 +38,7 @@
 
     <div class="form_group bottom-margin-small">
       <%= f.label :age %>
-      <%= f.select :age, ((9..18).map {|i| [i,i]}), class: 'form-control' %>
+      <%= f.select :age, ((9..18).map {|i| [i,i]}), {}, {class: 'form-control'} %>
     </div>
 
     <div class="form_group bottom-margin-small">
@@ -63,7 +63,7 @@
 
     <div class="form_group bottom-margin-small">
       <%= f.label :state %>
-      <%= f.text_field :state, class: 'form-control' %>
+      <%= f.select :state, options_for_select(us_states), {}, {class: 'form-control'} %>
     </div>
 
     <div class="form_group bottom-margin-small">
@@ -78,7 +78,7 @@
 
     <div class="form_group bottom-margin-small">
       <%= f.label :position %>
-      <%= f.select :position, options_for_select([['Attack', 'Attack'], ['Midfield', 'Midfield'], ['Defense', 'Defense'], ['Goalie', 'Goalie']]), class: 'form-control' %>
+      <%= f.select :position, options_for_select([['Attack', 'Attack'], ['Midfield', 'Midfield'], ['Defense', 'Defense'], ['Goalie', 'Goalie']]), {}, {class: 'form-control'} %>
     </div>
 
     <div class="form_group bottom-margin-small">
@@ -155,7 +155,7 @@
 
       <div class="form_group">
         <%= label_tag :card_number, "Credit Card Number" %>
-        <%= text_field_tag :card_number, nil, name: nil, class: 'form-control' %>
+        <%= text_field_tag :card_number, nil, name: nil, class: 'form-control bottom-margin-small' %>
       </div>
 
       <div class="form_group bottom-margin">
@@ -165,8 +165,8 @@
 
       <div class="form_group">
         <%= label_tag :card_month, "Card Expiration" %>
-        <%= select_month nil, {add_month_numbers: true}, {name: nil, id: 'card_month'} %>
-        <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 15}, {name: nil, id: 'card_year'} %>
+        <%= select_month nil, {add_month_numbers: true}, {name: nil, id: 'card_month', class: 'form-control bottom-margin-small'} %>
+        <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 15}, {name: nil, id: 'card_year', class: 'form-control'} %>
       </div>
     <% end %>
 
