@@ -7,16 +7,16 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
-            <th>Age</th>
-            <th>Position</th>
-            <th>Experience</th>
+            <th><%= sortable "age", @camp.id %></th>
+            <th><%= sortable "position", @camp.id %></th>
+            <th><%= sortable "experience", @camp.id %></th>
             <th>Mother's Name</th>
             <th>Mother's Email</th>
             <th>Father's Name</th>
             <th>Father's Email</th>
           </tr>
         </thead>
-        <% @camp.campers.each do |camper| %>
+        <% @campers.order(age: :asc).each do |camper| %>
         <tbody>
           <tr>
             <td>1</td>

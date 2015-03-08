@@ -1,5 +1,6 @@
 class CampsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  helper_method :sort_column, :sort_direction
 
   def index
     @camps = Camp.where("starting_date > ?", Date.today).order(starting_date: :asc)
@@ -15,11 +16,8 @@ class CampsController < ApplicationController
   end
 
   def reports
-    if params[:id].nil?
-      @camp = Camp.last
-    else
-      @camp = Camp.find(params[:id])
-    end
+    @camp = Camp.find(camp_id)
+    @campers = @camp.campers.order(sort_column + " " + sort_direction)
     @camps = Camp.all
   end
 
@@ -77,6 +75,18 @@ class CampsController < ApplicationController
       result_array.push(word.capitalize)
     end
     return result_array.join(' ')
+  end
+
+  def camp_id
+    params[:id] ||= Camp.last.id
+  end
+
+  def sort_column
+    ["age", "experience", "position"].include?(params[:sort]) ? params[:sort} : "age"
+  end
+
+  def sort_direction
+    %w["asc" "desc"].include?(params[:direction]) ? params[:direction] : "asc"
   end
 
   # Method to increase remaining slots when total slots is updated
