@@ -86,6 +86,11 @@
     </div>
 
     <div class="form_group bottom-margin-small">
+      <%= f.label :school, "School Name" %>
+      <%= f.text_field :school, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
       <%= f.label :team_name, "School or Club Team Name" %>
       <%= f.text_field :team_name, class: 'form-control' %>
     </div>
@@ -136,6 +141,8 @@
       <%= f.label :mother_phone, "Mother/Guardian Phone" %>
       <%= f.telephone_field :mother_phone, class: 'form-control' %>
     </div>
+
+    <br>
 
     <div class="form_group bottom-margin-small">
       <%= f.label :father_first_name, "Father/Guardian First Name" %>

@@ -1,5 +1,5 @@
   <div class="container">
-    <div class="col-xs-7">
+    <div class="col-xs-12">
       <table class="table table-hover">
         <thead>
           <tr>
@@ -12,10 +12,8 @@
             </th>
             <th><%= sortable "position", @camp.id %></th>
             <th><%= sortable "experience", @camp.id %></th>
-            <th>Mother's Name</th>
-            <th>Mother's Email</th>
-            <th>Father's Name</th>
-            <th>Father's Email</th>
+            <th>School Name</th>
+            <th>Hometown</th>
           </tr>
         </thead>
         <% @campers.order(age: :asc).each do |camper| %>
@@ -28,10 +26,8 @@
             <td><%= camper.age %></td>
             <td><%= camper.position %></td>
             <td><%= camper.experience %></td>
-            <td><%= "#{camper.mother_first_name} #{camper.mother_last_name}" %></td>
-            <td><%= camper.mother_email %></td>
-            <td><%= "#{camper.father_first_name} #{camper.father_last_name}" %></td>
-            <td><%= camper.father_email %></td>
+            <td><%= camper.school %></td>
+            <td><%= camper.city %>, <%= camper.state %></td>
           </tr>
         </tbody>
         <% end %>
