@@ -12,8 +12,8 @@ $('.home.about').ready(function(){
   }
 
   // Staff Profile Picture Logic
-  $('#lawson').mouseenter(lawsonToggle);
-  $('#lawson').mouseleave(lawsonToggle);
+  $('#stein').mouseenter(steinToggle);
+  $('#stein').mouseleave(steinToggle);
 
   $('#manley').mouseenter(manleyToggle);
   $('#manley').mouseleave(manleyToggle);
@@ -49,13 +49,13 @@ function showStaff(){
   $('#staff').css('display', 'block');
 }
 
-function lawsonToggle(){
-  if ($(this).css('margin-left') === '-270px'){
-    $(this).css('margin-left', 0);
-    $(this).css('width', '400px');
+function steinToggle(){
+  if ($(this).css('margin-left') === '-350px'){
+    $(this).css('margin-left', '-55px');
+    $(this).css('width', '615px');
   } else {
-    $(this).css('margin-left', '-270px');
-    $(this).css('width', '500px');
+    $(this).css('margin-left', '-350px');
+    $(this).css('width', '615px');
   }
 }
 

@@ -27,6 +27,7 @@
             <%= button_to "delete", camp, :method => 'delete', class: 'btn btn-danger float-left' %>
           <% end %>
         <% else %>
+          <%= link_to 'register', new_camper_path(:camp_id => camp.id), class: 'btn btn-success' %>
           <%= link_to 'more info', camp_path(camp.id), class: 'btn btn-primary' %>
         <% end %>
       </div>

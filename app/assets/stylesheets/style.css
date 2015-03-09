@@ -19,6 +19,10 @@ body {
   text-align: center;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .justify {
   text-align: justify;
 }
@@ -211,6 +215,11 @@ p {
   overflow: hidden;
   float: left;
   margin-right: 2em;
+}
+
+#stein {
+  width: 615px;
+  margin-left: -55px;
 }
 
 .profile-wrap-right {
@@ -448,4 +457,8 @@ a.checkout-button:hover {
   color: black;
   vertical-align: top;
   padding-left: 5px;
+}
+
+.accomplishments-wrap {
+  padding-left: 25px;
 }
