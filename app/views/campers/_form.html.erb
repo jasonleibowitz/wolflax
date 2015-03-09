@@ -164,6 +164,8 @@
       <%= f.telephone_field :father_phone, class: 'form-control' %>
     </div>
 
+    <br>
+
     <div class="checkbox bottom-margin-small <%= @camper.errors.include?(:waiver_signed) ? 'field with errors' : '' %>">
       <label>
         <%= f.check_box :waiver_signed, { class: 'checkbox' }, true, false %>
