@@ -27,7 +27,8 @@
   </div>
 
     <div class="form_group">
-      <p class="help-block">Camper's information.</p>
+      <br>
+      <h3>Camper's information.</h3>
       <%= f.label :first_name %>
       <%= f.text_field :first_name, id: 'first-name', class: 'form-control' %>
     </div>
@@ -115,7 +116,8 @@
     </div>
 
     <div class="form_group bottom-margin-small">
-      <p class="help-block">Camper's Parent/Guardian Information</p>
+      <br>
+      <h3>Camper's Parent/Guardian Information</h3>
       <%= f.label :mother_first_name, "Mother/Guardian First Name" %>
       <%= f.text_field :mother_first_name, class: 'form-control' %>
     </div>
@@ -167,6 +169,9 @@
     <% else %>
 
       <div class="form_group">
+        <br>
+        <h3>Payment Section</h3>
+        <p class="help-block">Full payment of $299 is due upon registration. Money is 100% refundable until 30 days before the 1st day of camp, at which time this becomes 100% non-refundable.</p>
         <%= label_tag :card_number, "Credit Card Number" %>
         <%= text_field_tag :card_number, nil, name: nil, class: 'form-control bottom-margin-small' %>
       </div>
