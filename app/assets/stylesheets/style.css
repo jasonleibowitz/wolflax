@@ -160,14 +160,20 @@ p {
   margin-top: -30px;
 }
 
+#welcome-top-left {
+  width: 250px;
+  margin-top: -30px;
+}
+
 #upcoming-img {
   width: 250px;
-  margin-top: -45px;
   margin-left: -20px;
 }
 
-#upcoming-wrap {
-  margin-top: 49px;
+#welcome-bottom-left {
+  width: 320px;
+  margin-left: -12px;
+  margin-bottom: -7px;
 }
 
 .nav-wrap {
@@ -215,6 +221,18 @@ p {
   overflow: hidden;
   float: left;
   margin-right: 2em;
+}
+
+.profile-wrap-homepage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.upcoming-wrap {
+  margin-top: 40px;
 }
 
 #stein {
