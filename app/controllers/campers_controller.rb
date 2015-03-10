@@ -12,7 +12,6 @@ class CampersController < ApplicationController
   def new
     @camps = Camp.all
     @camper = Camper.new
-    binding.pry
   end
 
   def create
