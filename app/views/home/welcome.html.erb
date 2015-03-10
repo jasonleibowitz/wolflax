@@ -76,10 +76,9 @@
         <p class="centered">If you are interested in hosting a Wolf Lacrosse Camp, kindly contact <a href="mailto:george@wolflax.com">George Stein</a>.</p>
       <div class="col-xs-7">
         <% @camps.each do |camp| %>
-            <h3 class="left-align"><%= camp.name %></h3>
-            <p><%= camp.description %></p>
-            <p><%= camp.starting_date.strftime "%A %b %e" %> - <%= camp.ending_date.strftime "%A %b %e" %> at <%= camp.location_name %></p>
-            <p><%= link_to 'Click for more info', camp_path(camp.id) %></p>
+            <h3 class="left-align"><%= camp.city %>, <%= camp.state %></h3>
+            <p><%= camp.starting_date.strftime "%A, %B %e" %> - <%= camp.ending_date.strftime "%A %B %e" %></p>
+            <p><%= link_to 'Click here for more information', camp_path(camp.id) %></p>
         <% end %>
       </div>
       <div class="col-xs-4 col-xs-offset-1 align-right">
