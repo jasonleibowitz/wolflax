@@ -51,8 +51,13 @@
     </div>
 
     <div class="form_group bottom-margin-small">
+      <%= f.label :grade %>
+      <%= f.select :grade, ((4..12).map {|i| ["Grade #{i}",i]}), {:include_blank => 'Select Grade'}, {class: 'form-control'} %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
       <%= f.label :age %>
-      <%= f.select :age, ((9..18).map {|i| [i,i]}), {}, {class: 'form-control'} %>
+      <%= f.select :age, ((9..18).map {|i| [i,i]}), {:include_blank => 'Select Age'}, {class: 'form-control'} %>
     </div>
 
     <div class="form_group bottom-margin-small">
@@ -77,7 +82,7 @@
 
     <div class="form_group bottom-margin-small">
       <%= f.label :state %>
-      <%= f.select :state, options_for_select(us_states), {}, {class: 'form-control'} %>
+      <%= f.select :state, options_for_select(us_states), {:include_blank => 'Select State'}, {class: 'form-control'} %>
     </div>
 
     <div class="form_group bottom-margin-small">
@@ -86,7 +91,7 @@
     </div>
 
     <div class="form_group bottom-margin-small">
-      <%= f.label :school, "School Name" %>
+      <%= f.label :school, "School" %>
       <%= f.text_field :school, class: 'form-control' %>
     </div>
 
@@ -97,12 +102,17 @@
 
     <div class="form_group bottom-margin-small">
       <%= f.label :position %>
-      <%= f.select :position, options_for_select([['Attack', 'Attack'], ['Midfield', 'Midfield'], ['Defense', 'Defense'], ['Goalie', 'Goalie']]), {}, {class: 'form-control'} %>
+      <%= f.select :position, options_for_select([['Attack', 'Attack'], ['Midfield', 'Midfield'], ['Defense', 'Defense'], ['Goalie', 'Goalie']]), {:include_blank => 'Select Your Preferred Position'}, {class: 'form-control'} %>
     </div>
 
     <div class="form_group bottom-margin-small">
       <%= f.label :experience, 'Years of Lacrosse Experience' %>
       <%= f.number_field :experience, class: 'form-control' %>
+    </div>
+
+    <div class="form_group bottom-margin-small">
+      <%= f.label :referral, 'How did you hear about Wolf Camps?' %>
+      <%= f.select :referral, options_for_select([['Email from a lacrosse coach', 'Email from a lacrosse coach'], ['A friend told me about it', 'A friend told me about it'], ['I discovered it online', 'I discovered it online'], ['Other', 'Other']]), {:include_blank => 'Please Select One'}, {class: 'form-control'} %>
     </div>
 
     <div class="form_group bottom-margin-small">
@@ -167,6 +177,7 @@
     <br>
 
     <div class="checkbox bottom-margin-small <%= @camper.errors.include?(:waiver_signed) ? 'field with errors' : '' %>">
+      <h3>Waiver</h3>
       <label>
         <%= f.check_box :waiver_signed, { class: 'checkbox' }, true, false %>
         By clicking this checkbox I agree that I have read and agree to <%= link_to "Wolflax Camps waiver form", asset_path("waiver_form.pdf") %>.

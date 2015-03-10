@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309010912) do
+ActiveRecord::Schema.define(version: 20150310003656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20150309010912) do
     t.string  "mother_phone"
     t.string  "father_phone"
     t.string  "school"
+    t.integer "grade"
+    t.string  "referral"
   end
 
   create_table "camps", force: true do |t|
