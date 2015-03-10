@@ -2,7 +2,7 @@ class Camp < ActiveRecord::Base
   validates :name, :price, :starting_date, :ending_date, :description, :location_name, :location_street_one, :city, :state, :zipcode, presence: true
   validates :price, numericality: true
 
-  has_and_belongs_to_many :users
+  # has_and_belongs_to_many :users
   has_many :campers
 
   scope :expired, -> { where('date_time < ?', Date.today) }

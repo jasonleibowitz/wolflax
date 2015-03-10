@@ -35,9 +35,12 @@ class CampsController < ApplicationController
     if @camp.valid?
       # @camp.starting_date = Chronic.parse(params[:camp][:starting_date])
       # @camp.ending_date = Chronic.parse(params[:camp][:ending_date])
-      @camp.name = capitalize_each_word(params[:camp][:name])
+      @camp.name = params[:camp][:name]
       @camp.location_name = capitalize_each_word(params[:camp][:location_name])
       @camp.city = capitalize_each_word(params[:camp][:city])
+      @camp.save!
+      segment_id = MailingList.new_camp_segment(@camp)
+      @camp.list_id = segment_id
       @camp.save!
       flash[:alert] = "#{@camp.name} has been created successfully."
       redirect_to camps_path
