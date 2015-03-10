@@ -43,7 +43,7 @@ class CampsController < ApplicationController
       @camp.list_id = segment_id
       @camp.save!
       flash[:alert] = "#{@camp.name} has been created successfully."
-      redirect_to camps_path
+      redirect_to @camp
     else
       render :new
     end
