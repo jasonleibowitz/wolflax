@@ -26,7 +26,7 @@ class Camp < ActiveRecord::Base
   end
 
   def report_name
-    "#{name}: #{starting_date}"
+    "#{city}, #{state}: #{starting_date}"
   end
 
 end

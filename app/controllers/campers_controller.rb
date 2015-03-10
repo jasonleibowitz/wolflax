@@ -12,11 +12,13 @@ class CampersController < ApplicationController
   def new
     @camps = Camp.all
     @camper = Camper.new
+    # gb = Gibbon::API.new
   end
 
   def create
     @camper = Camper.new(camper_params)
     @camps = Camp.all
+
     if @camper.save_with_payment
       redirect_to root_path, :notice => "Thank you for your purchase. We look forward to seeing you!"
     else

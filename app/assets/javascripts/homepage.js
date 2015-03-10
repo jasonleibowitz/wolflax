@@ -17,6 +17,15 @@ $('.home.welcome').ready(function(){
     }
   });
 
+  // Initialize each countdown clock
+  $.each($(".clock"), function(index, value){
+    console.log('starting date: ' + $(this).data('start'));
+    var starting_date = $(this).data('start');
+    $(this).countdown(starting_date, function(event){
+      $(this).html(event.strftime("%D days %H hours %M minutes %S seconds"));
+    });
+  });
+
 });
 
 function fixHeight(){

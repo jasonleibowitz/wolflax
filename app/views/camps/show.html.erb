@@ -26,8 +26,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Menu <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="/admin/camps">Scheduled Camps</a></li>
             <li><a href="/camps/new">Add a Camp</a></li>
+            <li><a href="/camps/reports">Camp Reports</a></li>
             <li class="divider"></li>
             <li><%= link_to'Log Out', destroy_user_session_path, method: 'delete' %></li>
           </ul>
@@ -44,9 +44,8 @@
   </div> -->
 
   <div class="col-xs-10 col-xs-offset-1">
-    <h1><%= @camp.name %></h1>
+    <h1><%= @camp.city %>, <%= @camp.state %></h1>
     <h4><%= @camp.starting_date.strftime "%A %b %e, %Y" %> - <%= @camp.ending_date.strftime "%A %b %e, %Y" %></h4>
-    <h5>Camp Starts in: <span id="clock" data-start="<%= @camp.starting_date.strftime "%Y/%m/%d" %>"></span></h5>
     <hr>
     <p><span class="bold">Location</span>: <%= @camp.location_name %> <br>
       <% if @camp.location_street_two.nil? %>

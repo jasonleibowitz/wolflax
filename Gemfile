@@ -22,4 +22,5 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem "figaro"
 gem 'rb-readline'
 gem 'chronic'
+gem 'gibbon'
 ruby '2.1.2'
