@@ -1,0 +1,100 @@
+<%- title "Wolf Lacrosse - About Staff" %>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path %>"><%= image_tag 'logo_blue.png', class: 'logo-nav' %></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/camps">Camps</a></li>
+        <li><a href="/about">About</a></li>
+        <li class="active"><a href="/about/staff">Staff</a></li>
+        <li><a href="/about/jordan">Jordan</a></li>
+        <li><a href="<%= new_camper_path %>">Register</a></li>
+      </ul>
+      <!-- admin section -->
+      <% if current_user != nil && current_user.admin %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Menu <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/clinics/new">Add a Clinic</a></li>
+            <li><a href="/camps/reports">Camp Reports</a></li>
+            <li class="divider"></li>
+            <li><%= link_to'Log Out', destroy_user_session_path, method: 'delete' %></li>
+          </ul>
+        </li>
+      </ul>
+      <% end %>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container bottom-margin">
+    <div class="col-xs-12 centered">
+      <div id="owl-demo" class="owl-carousel owl-theme">
+
+        <div class="item"><%= image_tag 'slideshow1.jpg' %></div>
+        <div class="item"><%= image_tag 'slideshow2.jpg' %></div>
+        <div class="item"><%= image_tag 'slideshow3.jpg' %></div>
+        <div class="item"><%= image_tag 'slideshow4.jpg' %></div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container" id="staff">
+
+    <div class="col-xs-8 col-xs-offset-2 staff top-margin">
+      <div class="col-xs-4">
+        <div class="profile-wrap">
+          <%= image_tag 'george_stein_sprite.jpg', class: 'profile', id: 'stein' %>
+        </div>
+      </div>
+      <div class="col-xs-7 col-xs-offset-1 left-margin">
+        <h2>George Stein, Camp Director</h2>
+        <h5>Accomplishments:</h5>
+        <ul>
+          <li>Founder &amp; Director of Project Denver in Denver, CO. Free one week camp for underprivileged youngsters ages 6-11. (2009-present)</li>
+          <li>Founder &amp; Director of Dream BIG Day Camp in Denver, CO. Private traditional day camp for boys and girls ages 4-12. (2006-2012)</li>
+          <li>Owner &amp; Director of Camp Echo Lake in Warrensburg, NY. Private residential camp founded by grandparents in 1946 serving boys and girls ages 7-16. (1989-2003)</li>
+          <li>Chair, Tri State Camping Conference in NYC. Largest gathering of camp professionals in the world. (2000-2001)</li>
+          <li>Graduate of Tufts University. Competed inter-collegiately in lacrosse, football and basketball. (Class of 1988)</li>
+          <li>Proud father of 13 year old twin boys, Will and Morry</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-xs-8 col-xs-offset-2 staff">
+      <div class="profile-wrap-right">
+        <%= image_tag 'michael_manley_sprite.png', class: 'profile', id: 'manley' %>
+      </div>
+      <h2>Mike Manley, Defense</h2>
+      <h4>Accomplishments:</h4>
+      <div class="accomplishments-wrap">
+        <h5>Rochester Rattlers</h5>
+        <ul>
+          <li>2014 MLL Warrior Defenseman of the Year</li>
+          <li>2014 Selection to MLL All-Star Game</li>
+          <li>2012 3rd pick overall in MLL draft</li>
+        </ul>
+        <h5>Duke University</h5>
+        <ul>
+          <li>2010 NCAA Champion</li>
+          <li>2010-2012  3 time USILA All-American</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>

@@ -8,6 +8,14 @@ class HomeController < ApplicationController
 
   end
 
+  def jordan
+
+  end
+
+  def staff
+
+  end
+
   def faq
 
   end

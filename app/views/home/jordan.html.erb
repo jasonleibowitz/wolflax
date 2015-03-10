@@ -1,0 +1,91 @@
+<%- title "Wolf Lacrosse - About Jordan" %>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path %>"><%= image_tag 'logo_blue.png', class: 'logo-nav' %></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/camps">Camps</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/about/staff">Staff</a></li>
+        <li class="active"><a href="/about/jordan">Jordan</a></li>
+        <li><a href="<%= new_camper_path %>">Register</a></li>
+      </ul>
+      <!-- admin section -->
+      <% if current_user != nil && current_user.admin %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Menu <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/clinics/new">Add a Clinic</a></li>
+            <li><a href="/camps/reports">Camp Reports</a></li>
+            <li class="divider"></li>
+            <li><%= link_to'Log Out', destroy_user_session_path, method: 'delete' %></li>
+          </ul>
+        </li>
+      </ul>
+      <% end %>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container bottom-margin">
+    <div class="col-xs-12 centered">
+      <div id="owl-demo" class="owl-carousel owl-theme">
+
+        <div class="item"><%= image_tag 'slideshow1.jpg' %></div>
+        <div class="item"><%= image_tag 'slideshow2.jpg' %></div>
+        <div class="item"><%= image_tag 'slideshow3.jpg' %></div>
+        <div class="item"><%= image_tag 'slideshow4.jpg' %></div>
+
+      </div>
+    </div>
+  </div>
+
+
+<div class="container" id="jordan">
+    <div class="col-xs-6 col-xs-offset-3 bottom-margin">
+      <h1 class="centered">Jordan</h1>
+    </div>
+    <div class="col-xs-10 col-xs-offset-1 bottom-margin">
+      <div class="profile-wrap-jordan">
+        <%= image_tag 'jordan.png', class: 'jordan-profile' %>
+      </div>
+    </div>
+    <div class="col-xs-6 col-xs-offset-3" id="jordan-bio">
+      <p>Jordan grew up in Philadelphia, PA attending Lower Merion HS where he excelled in lacrosse, hockey and soccer. He has fond memories of ski vacations with his parents and two brothers, Evan and Will. When he thinks of Philly, he thinks of Kobe Bryant, Cheesesteaks, the Eagles, the Flyers and the Phillies!</p>
+      <h4>Faves:</h4>
+      <ul>
+        <li>Favorite music: Tupac, Lil Wayne, Zac Brown Band</li>
+        <li>Favorite food: Spaghetti and Meatballs</li>
+        <li>Favorite show: The Office and ESPN Sportscenter</li>
+        <li>Favorite movie: Remember the Titans</li>
+      </ul>
+      <h4>Accomplishments:</h4>
+      <div class="accomplishments-wrap">
+        <h5>Rochester Rattlers</h5>
+        <ul>
+          <li>2014 2nd overall pick in MLL draft</li>
+          <li>2014 twice MLL rookie of the week</li>
+        </ul>
+        <h5>Duke University</h5>
+        <ul>
+          <li>2013 &amp; 2014 NCAA Champion</li>
+          <li>2014 NCAA Title Game Most Outstanding Player</li>
+          <li>2014 Tewaaraton Award Finalist</li>
+          <li>2014 USILA 1st Team All-American</li>
+        </ul>
+      </div>
+    </div>
+  </div>

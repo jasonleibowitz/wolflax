@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :students
   resources :campers
   get '/about' => 'home#about'
+  get '/about/jordan' => 'home#jordan'
+  get '/about/staff' => 'home#staff'
   # get '/faq' => 'home#faq'
   # get '/contact' => 'home#contact'
   get '/admin/clinics' => 'clinics#adminview'
