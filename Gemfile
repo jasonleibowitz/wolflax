@@ -23,4 +23,6 @@ gem "figaro"
 gem 'rb-readline'
 gem 'chronic'
 gem 'gibbon'
+gem 'mailchimp-api', '~> 2.0.6'
+gem 'phone'
 ruby '2.1.2'

@@ -12,7 +12,7 @@ class CampersController < ApplicationController
   def new
     @camps = Camp.all
     @camper = Camper.new
-    # gb = Gibbon::API.new
+    # binding.pry
   end
 
   def create

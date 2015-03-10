@@ -67,6 +67,7 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     erubis (2.7.0)
+    excon (0.44.4)
     execjs (2.2.1)
     figaro (0.7.0)
       bundler (~> 1.0)
@@ -89,6 +90,9 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mailchimp-api (2.0.6)
+      excon (>= 0.16.0)
+      json (>= 1.7.7)
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (5.4.1)
@@ -102,6 +106,7 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pg (0.17.1)
+    phone (1.2.3)
     polyglot (0.3.5)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -202,8 +207,10 @@ DEPENDENCIES
   gibbon
   jbuilder (~> 2.0)
   jquery-rails
+  mailchimp-api (~> 2.0.6)
   paperclip (~> 4.2)
   pg
+  phone
   pry-rails
   rails (= 4.1.1)
   rails_12factor

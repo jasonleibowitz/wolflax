@@ -87,7 +87,7 @@
       </div>
       <div class="col-xs-6">
         <% @camps.each do |camp| %>
-            <h3 class="left-align"><%= camp.city %>, <%= camp.state %></h3>
+            <h3 class="left-align"><%= camp.name %></h3>
             <p><%= camp.starting_date.strftime "%A, %B %e" %> - <%= camp.ending_date.strftime "%A %B %e" %></p>
             <p>Camp starts in: <span class="clock" data-start="<%= camp.starting_date.strftime "%Y/%m/%d" %>"></span></p>
             <p><%= link_to 'Click here for more information', camp_path(camp.id) %></p>

@@ -23,7 +23,7 @@
   <div class="form_group">
     <p class="help-block">Which camp are you registering for?</p>
     <%= f.label :camp_id %>
-    <%= f.select :camp_id, @camps.collect { |c| ["#{c.city}, #{c.state}: #{c.starting_date.strftime "%A %b %e, %Y"} - #{c.ending_date.strftime "%A %b %e, %Y"}", c.id] }, {:selected => params[:camp_id] || nil}, {class: 'form-control'} %>
+    <%= f.select :camp_id, @camps.collect { |c| ["#{c.name}: #{c.starting_date.strftime "%A %b %e, %Y"} - #{c.ending_date.strftime "%A %b %e, %Y"}", c.id] }, {:selected => params[:camp_id] || nil}, {class: 'form-control'} %>
   </div>
 
     <div class="form_group">

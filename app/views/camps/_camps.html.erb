@@ -13,7 +13,7 @@
   <% else %>
     <% @camps.each do |camp| %>
       <div class="col-xs-12 bottom-margin">
-        <p><span class="bold"><%= link_to "#{camp.city}, #{camp.state}", camp_path(camp) %></span> - <%= number_to_currency(camp.price) %></p>
+        <p><span class="bold"><%= link_to camp.name, camp_path(camp) %></span> - <%= number_to_currency(camp.price) %></p>
         <p><span class="bold">Location</span>: <%= camp.location_name %></p>
         <p><span class="bold">Date</span>: <%= camp.starting_date.strftime "%A %B %e at %l:%M %P" %></p>
         <p><span class="bold">Description</span>: <%= camp.description %></p>
