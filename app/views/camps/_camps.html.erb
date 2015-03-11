@@ -15,7 +15,7 @@
       <div class="col-xs-12 bottom-margin">
         <p><span class="bold"><%= link_to camp.name, camp_path(camp) %></span> - <%= number_to_currency(camp.price) %></p>
         <p><span class="bold">Location</span>: <%= camp.location_name %></p>
-        <p><span class="bold">Date</span>: <%= camp.starting_date.strftime "%A %B %e" %> - <%= camp.ending_date.strftime "%A %B %e" %></p>
+        <p><span class="bold">Dates</span>: <%= camp.starting_date.strftime "%A %B %e" %> - <%= camp.ending_date.strftime "%A %B %e" %></p>
         <p><span class="bold">Description</span>: <%= camp.description %></p>
         <p><%= camp.location_street_one %>, <%= camp.city %>, <%= camp.state %></p>
         <% if current_user != nil && current_user.admin %>
