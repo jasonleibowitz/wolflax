@@ -45,11 +45,11 @@
       <div class="hero-img-overlay"></div>
     </div>
     <div class="nav-wrap red-text">
-      <a href="/camps"><button type="button" class="btn btn-default nav-button"><%= image_tag 'clinic.png', class: 'button-icon' %> <span class="red-text">camps</span></button></a>
-      <a href="/about"><button type="button" class="btn btn-default nav-button vcenter"><i class="fa fa-info-circle"></i> <span class="red-text">about</span></button></a>
-      <a href="/about?q=staff"><button type="button" class="btn btn-default nav-button"><i class="fa fa-comment"></i> <span class="red-text">staff</span></button></a>
-      <a href="/about?q=jordan"><button type="button" class="btn btn-default nav-button"><i class="fa fa-envelope"></i> <span class="red-text">jordan</span></button></a>
-      <a href="<%= new_camper_path %>"><button type="button" class="btn btn-default nav-button"><i class="fa fa-envelope"></i> <span class="red-text">register</span></button></a>
+      <button onclick="window.location.href='/camps'" class="button button--antiman button--inverted button--border-thin button--text-thick button--size-m"><span>Camps</span></button>
+      <button onclick="window.location.href='/about'" class="button button--antiman button--inverted button--border-thin button--text-thick button--size-m"><span>About</span></button>
+      <button onclick="window.location.href='/about/staff'" class="button button--antiman button--inverted button--border-thin button--text-thick button--size-m"><span>Staff</span></button>
+      <button onclick="window.location.href='/about/jordan'" class="button button--antiman button--inverted button--border-thin button--text-thick button--size-m"><span>Jordan</span></button>
+      <button onclick="window.location.href='/register'" class="button button--antiman button--inverted button--border-thin button--text-thick button--size-m"><span>Register</span></button>
     </div>
   </div>
 
