@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 
   def welcome
     @camps = Camp.where("starting_date > ?", Date.today).order(starting_date: :asc).limit(3)
+    @upcoming_camps = Camp.where("starting_date > ?", Date.today)
   end
 
   def about
