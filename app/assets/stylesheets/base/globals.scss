@@ -1,0 +1,208 @@
+// # # # # # # # # # # # # # # # # # # # # # # # #
+// # # # # # # # # # VARIABLES # # # # # # # # # #
+// # # # # # # # # # # # # # # # # # # # # # # # #
+
+$break-xsmall: 650px;
+$break-small: 770px;
+$break-medium: 992px;
+$break-large: 1125px;
+
+// # # # # # # # # # # # # # # # # # # # # # # # #
+// # # # # # # # # # # GLOBAL  # # # # # # # # # #
+// # # # # # # # # # # # # # # # # # # # # # # # #
+
+body {
+  color: #001A57;
+  font-family: Avenir, 'Helvetica-Neue', Helvetica, sans-serif;
+}
+
+p {
+  text-align: justify;
+}
+
+.alert {
+  color: red;
+}
+
+.btn {
+  margin-right: 1em;
+  border: none;
+}
+
+// # # # # # # # # # # # # # # # # # # # # # # # #
+// # # # # # # # # # # NAV # # # # # # # # # # # #
+// # # # # # # # # # # # # # # # # # # # # # # # #
+
+.logo-nav {
+  width: 60px;
+  margin-top: -20px;
+}
+
+// # # # # # # # # # # # # # # # # # # # # # # # #
+// # # # # # # # # # FOOTER  # # # # # # # # # # #
+// # # # # # # # # # # # # # # # # # # # # # # # #
+
+.footer {
+  /*position: fixed;*/
+  /*bottom: 0;*/
+  /*left: 0;*/
+  width: 100%;
+  /*height: 278px;*/
+  margin-top: 4%;
+  padding-top: 2em;
+  background: rgb(43, 45, 46);
+  color: rgb(255, 255, 255);
+
+  @media screen and (max-width: $break-small) {
+    text-align: center;
+
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.footer a {
+  color: white;
+}
+
+.footer h4 {
+  padding-bottom: 1em;
+}
+
+.footer .social-media {
+  text-align: center;
+  padding-top: 1em;
+}
+
+.footer i {
+  color: white;
+  padding-right: 1em;
+  padding-bottom: 1em;
+}
+
+.sponsor-logo {
+  width: 200px;
+
+  @media screen and (max-width: $break-medium) {
+    width: 175px
+  }
+
+  @media screen and (max-width: $break-small) {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.fa-facebook:hover {
+  color: RGB(59, 87, 157);
+}
+
+.fa-twitter:hover {
+  color: RGB(85, 172, 238);
+}
+
+.fa-instagram:hover {
+  color: RGB(7, 119, 180);
+}
+
+.fa-youtube-play:hover {
+  color: red;
+}
+
+.fa-info-circle {
+  margin-right: .25em;
+}
+
+.footer .last-icon {
+  padding-right: 0;
+}
+
+// # # # # # # # # # # # # # # # # # # # # # # # #
+// # # # # # # # # UTILITY CLASSES # # # # # # # #
+// # # # # # # # # # # # # # # # # # # # # # # # #
+
+.red {
+  background: red;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.centered {
+  text-align: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.bottom-margin {
+  margin-bottom: 2em;
+}
+
+.top-margin {
+  margin-top: 2em;
+}
+
+.bottom-margin-small {
+  margin-bottom: 1em;
+}
+
+.bottom-margin-2x {
+  margin-bottom: 4em;
+}
+
+.red-text {
+  color: red;
+}
+
+.red-text i {
+  color: red;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.float-left {
+  float: left;
+}
+
+.align-right {
+  right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,18 +8,19 @@ $('.home.welcome').ready(function(){
   navTop = $('.nav-wrap').position().top;
   $(window).scroll(function(){
     var scrolled = $(window).scrollTop();
-    if (scrolled > navTop){
-      $('.nav-wrap').fadeOut();
-      $('#navbar-homepage').fadeIn();
-    } else if (scrolled < navTop) {
-      $('.nav-wrap').fadeIn();
-      $('#navbar-homepage').fadeOut();
+    if ($("body").width > 945) {
+      if (scrolled > navTop){
+        $('.nav-wrap').removeClass('fadeIn').addClass('fadeOut');
+        $('#navbar-homepage').removeClass('fadeOut').addClass('fadeIn');
+      } else if (scrolled < navTop) {
+        $('.nav-wrap').removeClass('fadeOut').addClass('fadeIn');
+        $('#navbar-homepage').removeClass('fadeIn').addClass('fadeOut');
+      }
     }
   });
 
   // Initialize each countdown clock
   $.each($(".clock"), function(index, value){
-    console.log('starting date: ' + $(this).data('start'));
     var starting_date = $(this).data('start');
     $(this).countdown(starting_date, function(event){
       $(this).html(event.strftime("%D days %H hours %M minutes %S seconds"));

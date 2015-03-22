@@ -1,0 +1,15 @@
+// # # # # # # # # # # # # # # # # # # # # # # # #
+// # # # # # # # # # VARIABLES # # # # # # # # # #
+// # # # # # # # # # # # # # # # # # # # # # # # #
+
+$break-small: 320px;
+$break-large: 935px;
+
+// # # # # # # # # # # # # # # # # # # # # # # # #
+// # # # # # # # # # VARIABLES # # # # # # # # # #
+// # # # # # # # # # # # # # # # # # # # # # # # #
+
+@media screen and (max-width: $break-small) {
+  width: 100px;
+  float: none;
+}

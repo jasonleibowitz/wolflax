@@ -1,7 +1,7 @@
-body {
+/*body {
   color: #001A57;
   font-family: Avenir, 'Helvetica-Neue', Helvetica, sans-serif;
-}
+}*/
 
 .red {
   background: red;
@@ -83,7 +83,6 @@ p {
 .hero-img-wrap {
   position: absolute;
   background: url('wolf_hero.jpg');
-  background-size: 100%;
   background-position: top;
   background-repeat: no-repeat;
   height: 75%;

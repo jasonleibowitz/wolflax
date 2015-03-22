@@ -1,0 +1,65 @@
+#stein {
+  width: 615px;
+  margin-left: -55px;
+}
+
+.profile-wrap, .profile-wrap-right, .profile-wrap-jordan {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+  margin-right: 2em;
+}
+
+.profile-wrap-right {
+  float: right;
+  margin-left: 2em;
+}
+
+.profile-wrap-jordan {
+  display: block;
+  float: none;
+  margin: 0 auto;
+}
+
+.profile {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#manley {
+  margin-left: -20px;
+  margin-top: -50px;
+  width: 500px;
+}
+
+.jordan-profile {
+  text-align: center;
+  width: 400px;
+  margin-left: -130px;
+}
+
+#jordan-action {
+  width: 250px;
+
+}
+
+#jordan-bio {
+  margin-top: 3em;
+}
+
+h1.jordan {
+  width: 200px;
+  text-align: center;
+}
+
+.staff {
+  margin-bottom: 3em;
+}
+
+#owl-demo .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}

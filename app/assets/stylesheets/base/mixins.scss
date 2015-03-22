@@ -1,0 +1,146 @@
+@mixin prefixer ($property, $value,
+                 $moz:    false,
+                 $webkit: false,
+                 $o:      false,
+                 $ms:     false,
+                 $spec:   true) {
+  @if $moz    {    -moz-#{$property}: $value; }
+  @if $webkit { -webkit-#{$property}: $value; }
+  @if $o      {      -o-#{$property}: $value; }
+  @if $ms     {     -ms-#{$property}: $value; }
+  @if $spec   {         #{$property}: $value; }
+}
+
+@mixin border-radius($radius: 5px) {
+  @include prefixer(border-radius, $radius, moz, webkit, khtml);
+  @include prefixer(background-clip, padding-box, moz, webkit);
+}
+
+@mixin box-shadow($x: 5px, $y: 5px, $blur: 10px, $spread: 10px, $color: #000) {
+  @include prefixer(box-shadow, $x $y $blur $spread $color, webkit, moz);
+   $iecolor: '#' + red($color) + green($color) + blue($color);
+    filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=#{$x}, OffY=#{$y}, Color='#{$iecolor}');
+    -ms-filter: quote(progid:DXImageTransform.Microsoft.dropshadow(OffX=#{$x}, OffY=#{$y}, Color='#{$iecolor}'));
+}
+
+@mixin rotate($deg: 90deg) {
+  @include prefixer(transform, rotate($deg), webkit, mox, ms, o);
+  filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.9914448613738104, M12=-0.13052619222005157,M21=0.13052619222005157, M22=0.9914448613738104, sizingMethod='auto expand');
+  zoom: 1;
+}
+
+@mixin em-size($pxval: 14px, $base : 10px) {
+  font-size: $pxval;
+  font-size: ($pxval/$base) * 1rem; /* #{$pxval}/#{$base} */
+}
+
+@mixin inline-block {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+}
+
+@mixin opacity($alpha: .8) {
+  filter: unquote("alpha(opacity=#{($alpha * 100)})");
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($alpha * 100) + ")";
+  @include prefixer(opacity, $alpha, moz, khtml);
+}
+
+@mixin transition($property: all, $time: .5s, $timing: ease-in-out) {
+    @include prefixer(transition-duration, $time, moz, webkit, ms, o);
+    @include prefixer(transition-property, $property, moz, webkit, ms, o);
+  @include prefixer(transition-timing-function, $timing, moz, webkit, ms, o);
+}
+
+@mixin center() {
+  display: block;
+  margin: 0 auto;
+}
+
+@mixin linear-gradient($pos, $G1, $G2: false,
+                       $G3: false, $G4: false,
+                       $G5: false, $G6: false,
+                       $G7: false, $G8: false,
+                       $G9: false, $G10: false,
+                       $deprecated-pos1: left top,
+                       $deprecated-pos2: left bottom,
+                       $fallback: false) {
+
+  $pos-type: type-of(nth($pos, 1)); // Detect what type of value exists in $pos
+
+  // If $pos is missing from mixin, reassign vars and add default position
+  @if ($pos-type == color) or (nth($pos, 1) == "transparent")  {
+    $G10: $G9; $G9: $G8; $G8: $G7; $G7: $G6; $G6: $G5;
+    $G5: $G4; $G4: $G3; $G3: $G2; $G2: $G1; $G1: $pos;
+    $pos: top; // Default position
+  }
+
+  $full: compact($G1, $G2, $G3, $G4, $G5, $G6, $G7, $G8, $G9, $G10);
+
+  // Set $G1 as the default fallback color
+  $fallback-color: nth($G1, 1);
+
+  // If $fallback is a color use that color as the fallback color
+  @if (type-of($fallback) == color) or ($fallback == "transparent") {
+    $fallback-color: $fallback;
+  }
+
+  background-color: $fallback-color;
+  background-image: deprecated-webkit-gradient(linear, $deprecated-pos1, $deprecated-pos2, $full);
+  background-image:  -webkit-linear-gradient($pos, $full);
+  background-image:     -moz-linear-gradient($pos, $full);
+  background-image:      -ms-linear-gradient($pos, $full);
+  background-image:       -o-linear-gradient($pos, $full);
+  background-image: unquote("linear-gradient(#{$pos}, #{$full})");
+
+  $from: nth(nth($full, 1), 1);
+  $to: nth(nth($full, length($full)), 1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+    -ms-filter: quote(progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}'));
+}
+
+@mixin alpha-background($color, $alpha, $ie: false){
+  @if ($ie){
+    background-color: none;
+      $hexopac: ie-hex-str(rgba($color, $alpha));
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$hexopac}',EndColorStr='#{$hexopac}}');
+      -ms-filter: quote(progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$hexopac}',EndColorStr='#{$hexopac}'));
+  }
+  @else{
+    background-color: $color;
+    background-color: rgba($color, $alpha);
+  }
+}
+
+@mixin clearfix(){
+  &{
+    *zoom: 1;
+    &:after,
+    &:before{
+      display: table;
+      clear: both;
+      content: " ";
+    }
+  }
+}
+
+@mixin hide-children(){
+  &{
+    color: transparent;
+    & *{
+      display: none;
+    }
+  }
+}
+
+@function compact($vars...) {
+  $list: ();
+  @each $var in $vars {
+    @if $var {
+      $list: append($list, $var, comma);
+    }
+  }
+  @return $list;
+}
