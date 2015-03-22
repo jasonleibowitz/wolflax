@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
   <title><%= content_for?(:title) ? content_for(:title) : "Wolf Lacrosse Camps" %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -13,7 +14,7 @@
   <%= yield %>
 
 <div class="container-fluid footer">
-  <div class="col-xs-2 col-xs-offset-2">
+  <div class="col-sm-3 col-md-2 col-md-offset-2">
     <h4>Company</h4>
     <%= link_to 'Camps', camps_path %> <br>
     <%= link_to 'About', about_path %> <br>
@@ -21,7 +22,7 @@
     <%= link_to 'Staff', about_staff_path %> <br>
     <%= link_to 'Register', new_camper_path %>
   </div>
-  <div class="col-xs-2">
+  <div class="col-sm-3 col-md-2">
     <h4>Camps</h4>
     <%= link_to 'Upcoming Camps', camps_path %> <br>
     <% if current_user == nil %>
@@ -33,13 +34,13 @@
       <%= link_to 'Camp Reports', camps_reports_path %>
     <% end %>
   </div>
-  <div class="col-xs-2">
+  <div class="col-sm-3 col-md-2">
     <h4>Contact</h4>
     <a href="mailto:jordan@wolflax.com">Jordan Wolf</a> <br>
     <a href="mailto:george@wolflax.com">George Stein, Camp Director</a> <br>
     <p>(303) 332-8115</p>
   </div>
-  <div class="col-xs-2">
+  <div class="col-sm-3 col-md-2">
     <h4>Sponsors</h4>
     <a href="http://www.cascadehelmets.com/" target="_blank"><%= image_tag 'cascade_logo.png', class: 'sponsor-logo' %></a>
     <a href="http://maveriklacrosse.com/" target="_blank"><%= image_tag 'maverick_logo.png', class: 'sponsor-logo' %></a>
