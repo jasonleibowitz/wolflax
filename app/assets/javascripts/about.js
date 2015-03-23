@@ -5,7 +5,8 @@ $('.home.about').ready(function(){
       slideSpeed : 300,
       paginationSpeed : 400,
       singleItem:true,
-      autoPlay: true
+      autoPlay: true,
+      autoHeight: true
     });
 
   // about page content toggle

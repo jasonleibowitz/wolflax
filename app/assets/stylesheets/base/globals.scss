@@ -18,6 +18,11 @@ body {
 
 p {
   text-align: justify;
+
+  @media screen and (max-width: $break-small) {
+    margin-bottom: 5px;
+  }
+
 }
 
 .alert {

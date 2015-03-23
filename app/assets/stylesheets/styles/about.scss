@@ -63,3 +63,10 @@ h1.jordan {
     width: 100%;
     height: auto;
 }
+
+.about-text-block {
+
+  @media screen and (max-width: $break-small) {
+    margin-bottom: 50px;
+  }
+}

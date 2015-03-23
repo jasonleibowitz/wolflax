@@ -15,3 +15,11 @@
   padding: 0;
   width: 80%;
 }
+
+.upcoming-camps {
+  margin-bottom: 2em;
+
+  @media screen and (max-width: $break-small) {
+    margin-bottom: 0;
+  }
+}
