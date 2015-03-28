@@ -54,10 +54,12 @@
   </div>
 
   <div class="container-fluid content">
-    <div class="col-xs-10 col-xs-offset-1">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div>
+    <% unless notice.nil? || alert.nil? %>
+      <div class="col-xs-10 col-xs-offset-1">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
 
     <div class="col-xs-12">
       <h1 class="bottom-margin centered">Welcome to Wolf Lacrosse</h1>
@@ -66,7 +68,7 @@
         <%= image_tag 'homepage_5.jpg', id: 'welcome-top-left' %>
         </div>
       </div>
-      <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 homepage-text">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 homepage-text">
         <p class="justify">Wolf Lacrosse is a one-of-a-kind lacrosse experience for young players that specializes on player positions and development. At Wolf Lacrosse Camps, you will improve your lacrosse IQ, skills, fundamentals, and work ethic through a highly structured and efficient lacrosse program. Our goals are very simple. We want every player to improve his skills and become more proficient AND we want every player to have a blast playing the sport of lacrosse!  Please note that our camps are designed for boys in or entering grade 4 and above. <span class="bold">I take great pride in getting to know your child and and being on the field everyday with all of our campers.</span></p>
       </div>
       <div class="col-xs-12 col-md-3 align-right">
@@ -85,10 +87,10 @@
           <%= image_tag 'homepage_3.jpg', id: 'welcome-bottom-left' %>
         </div>
       </div>
-      <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
         <% @camps.each do |camp| %>
             <h3 class="left-align"><%= camp.name %></h3>
-            <p><%= camp.starting_date.strftime "%A, %B %e" %> - <%= camp.ending_date.strftime "%A %B %e" %></p>
+            <p><%= camp.starting_date.strftime "%a, %B %e" %> - <%= camp.ending_date.strftime "%a %B %e" %></p>
             <p>Camp starts in: <span class="clock" data-start="<%= camp.starting_date.strftime "%Y/%m/%d" %>"></span></p>
             <p><%= link_to 'Click here for more information', camp_path(camp.id) %></p>
         <% end %>
