@@ -10,11 +10,23 @@
   overflow: hidden;
   float: left;
   margin-right: 2em;
+
+  @media screen and (max-width: $break-medium) {
+    float: none;
+    margin-right: 0;
+    margin: 0 auto;
+  }
 }
 
 .profile-wrap-right {
   float: right;
   margin-left: 2em;
+
+  @media screen and (max-width: $break-medium) {
+    float: none;
+    margin-left: 0;
+    margin: 0 auto;
+  }
 }
 
 .profile-wrap-jordan {
@@ -66,7 +78,21 @@ h1.jordan {
 
 .about-text-block {
 
-  @media screen and (max-width: $break-small) {
+  @media screen and (max-width: $break-medium) {
     margin-bottom: 50px;
+  }
+}
+
+.accomplishments-wrap {
+  padding-left: 25px;
+
+  @media screen and (max-width: $break-medium) {
+    padding-left: 0px;
+  }
+}
+
+.george-accomplishments {
+  @media screen and (max-width: $break-medium) {
+    padding-left: 15px;
   }
 }

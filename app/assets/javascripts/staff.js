@@ -15,6 +15,17 @@ $(".home.staff").ready(function(){
   $('#manley').mouseenter(manleyToggle);
   $('#manley').mouseleave(manleyToggle);
 
+  // Mobile Responsive DOM Manipulation using enquire.js
+  enquire.register("screen and (max-width:992px)", {
+    match: function() {
+      $(".manley-wrap").prepend($(".manley-profile").eq(0).remove());
+    },
+
+    unmatch: function() {
+      $(".manley-wrap").append($(".manley-profile").eq(0).remove());
+    },
+  });
+
 });
 
 function steinToggle(){
