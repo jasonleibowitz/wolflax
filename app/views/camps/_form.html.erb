@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="col-xs-6 col-xs-offset-3 red-text">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2 red-text">
     <% if @camp.errors.any? %>
       <p>Please correct the following errors:</p>
       <ul>
@@ -9,7 +9,7 @@
       </ul>
     <% end %>
   </div>
-  <div class="col-xs-6 col-xs-offset-3">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2">
       <%= form_for @camp do |f| %>
       <div class="form-group">
         <%= f.label :name %>
