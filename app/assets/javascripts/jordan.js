@@ -8,4 +8,5 @@ $(".home.jordan").ready(function(){
       autoPlay: true
     });
 
+
 });

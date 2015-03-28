@@ -96,3 +96,12 @@ h1.jordan {
     padding-left: 15px;
   }
 }
+
+.video-wrap {
+  iframe {
+    @media screen and (max-width: $break-xsmall) {
+      width: 250px;
+      height: 141px;
+    }
+  }
+}
