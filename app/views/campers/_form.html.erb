@@ -1,10 +1,10 @@
-<div class="col-xs-10 col-xs-offset-2">
+<div class="col-xs-12 col-sm-10 col-sm-offset-2">
   <% if flash[:alert] != nil %>
     <p class="alert"><%= flash[:alert] %></p>
   <% end %>
 </div>
 
-<div class="col-xs-10 col-xs-offset-1 errors">
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 errors">
   <% if @camper.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@camper.errors.count, "error") %> prevented you from registering. Please fix the following errors:</h2>
@@ -17,7 +17,7 @@
   <% end %>
 </div>
 
-<div class="col-xs-5 col-xs-offset-1">
+<div class="col-xs-12 col-sm-5 col-sm-offset-1">
   <%= form_for @camper do |f| %>
 
   <div class="form_group">
@@ -193,12 +193,12 @@
         <h3>Payment Section</h3>
         <p class="help-block">Full payment of $299 is due upon registration. Money is 100% refundable until 30 days before the 1st day of camp, at which time this becomes 100% non-refundable.</p>
         <%= label_tag :card_number, "Credit Card Number" %>
-        <%= text_field_tag :card_number, nil, name: nil, class: 'form-control bottom-margin-small' %>
+        <%= number_field_tag :card_number, nil, name: nil, class: 'form-control bottom-margin-small' %>
       </div>
 
       <div class="form_group bottom-margin">
         <%= label_tag :card_code, "Security Code on Card (CVV)" %>
-        <%= text_field_tag :card_code, nil, name: nil, class: 'form-control' %>
+        <%= number_field_tag :card_code, nil, name: nil, class: 'form-control' %>
       </div>
 
       <div class="form_group">
