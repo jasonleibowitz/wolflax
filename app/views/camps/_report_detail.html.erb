@@ -1,36 +1,38 @@
   <div class="container">
     <div class="col-xs-12">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>
-              <%= sortable "age", @camp.id %>
-            </th>
-            <th><%= sortable "position", @camp.id %></th>
-            <th><%= sortable "experience", @camp.id %></th>
-            <th>School Name</th>
-            <th>Hometown</th>
-          </tr>
-        </thead>
-        <% @campers.order(age: :asc).each do |camper| %>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td><%= camper.first_name %></td>
-            <td><%= camper.last_name %></td>
-            <td><%= camper.email || 'N/A' %></td>
-            <td><%= camper.age %></td>
-            <td><%= camper.position %></td>
-            <td><%= camper.experience %></td>
-            <td><%= camper.school %></td>
-            <td><%= camper.city %>, <%= camper.state %></td>
-          </tr>
-        </tbody>
-        <% end %>
-      </table>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>
+                <%= sortable "age", @camp.id %>
+              </th>
+              <th><%= sortable "position", @camp.id %></th>
+              <th><%= sortable "experience", @camp.id %></th>
+              <th>School Name</th>
+              <th>Hometown</th>
+            </tr>
+          </thead>
+          <% @campers.order(age: :asc).each do |camper| %>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><%= camper.first_name %></td>
+              <td><%= camper.last_name %></td>
+              <td><%= camper.email || 'N/A' %></td>
+              <td><%= camper.age %></td>
+              <td><%= camper.position %></td>
+              <td><%= camper.experience %></td>
+              <td><%= camper.school %></td>
+              <td><%= camper.city %>, <%= camper.state %></td>
+            </tr>
+          </tbody>
+          <% end %>
+        </table>
+      </div>
     </div>
   </div>
