@@ -95,7 +95,7 @@
             <p><%= link_to 'Click here for more information', camp_path(camp.id) %></p>
         <% end %>
         <br>
-        <% if @upcoming_camps.length > 3 %>
+        <% if @upcoming_camps.length > 4 %>
           <%= link_to "View All Camps", camps_path, {class: "btn btn-primary btn-lg view-all-camps-button"} %>
         <% end %>
       </div>
