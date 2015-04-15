@@ -29,4 +29,8 @@ class Camp < ActiveRecord::Base
     "#{name}: #{starting_date}"
   end
 
+  def google_map_name
+    "#{self.location_street_one.split(' ').join('+')}+#{self.city.split(' ').join('+')}+#{self.state.split(' ').join('+')}"
+  end
+
 end
