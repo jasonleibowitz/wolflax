@@ -88,5 +88,65 @@ class MailingList
     return segment
   end
 
+  def self.update_camp_segment(camper, new_camp_id)
+    gb = Gibbon::API.new
+    old_list_id = camper.camp.list_id
+    new_list_id = Camp.find(new_camp_id).list_id
+
+    if camper.email
+      gb.lists.static_segment_members_del({
+        :id => LIST_ID,
+        :seg_id => old_list_id,
+        :batch => [
+          :email => camper.email
+        ]
+      })
+
+      gb.lists.static_segment_members_add({
+        :id => LIST_ID,
+        :seg_id => new_list_id,
+        :bath => [
+          :email => camper.email
+        ]
+      })
+    end
+
+    if camper.mother_email
+      gb.lists.static_segment_members_del({
+        :id => LIST_ID,
+        :seg_id => old_list_id,
+        :batch => [
+          :email => camper.mother_email
+        ]
+      })
+
+      gb.lists.static_segment_members_add({
+        :id => LIST_ID,
+        :seg_id => new_list_id,
+        :bath => [
+          :email => camper.mother_email
+        ]
+      })
+    end
+
+    if camper.father_email
+      gb.lists.static_segment_members_del({
+        :id => LIST_ID,
+        :seg_id => old_list_id,
+        :batch => [
+          :email => camper.father_email
+        ]
+      })
+
+      gb.lists.static_segment_members_add({
+        :id => LIST_ID,
+        :seg_id => new_list_id,
+        :bath => [
+          :email => camper.father_email
+        ]
+      })
+    end
+  end
+
 end
 
