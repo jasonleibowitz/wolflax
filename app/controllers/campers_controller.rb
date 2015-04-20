@@ -1,4 +1,5 @@
 class CampersController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :update]
 
   def index
     @camp = Camp.find(params[:camp_id])
@@ -22,6 +23,25 @@ class CampersController < ApplicationController
       redirect_to root_path, :notice => "Thank you for your purchase. We look forward to seeing you!"
     else
       render :new
+    end
+  end
+
+  def edit
+    @camper = Camper.find(params[:id])
+    @camps = Camp.all
+  end
+
+  def update
+    @camper = Camper.find(params[:id])
+    @camps = Camp.all
+    if @camper.camp_id != camper_params[:camp_id]
+      # update mailchimp
+    end
+    @camper.update(camper_params)
+    if @camper.valid?
+      redirect_to camps_reports_path, :notice => "#{@camper.first_name} #{@camper.last_name} has been updated."
+    else
+      render :edit
     end
   end
 

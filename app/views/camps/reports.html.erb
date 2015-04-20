@@ -48,6 +48,14 @@
   </div>
 
   <div class="container">
+    <div class="col-xs-12">
+      <% if flash[:notice] %>
+        <p class="alert"><%= flash[:notice] %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="container">
     <div class="col-xs-8">
       <%= form_tag '/camps/reports', method: 'get', class: 'form-inline', id: 'report-camp-select' do %>
         <div class="form-group">

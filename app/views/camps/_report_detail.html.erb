@@ -15,6 +15,7 @@
               <th><%= sortable "experience", @camp.id %></th>
               <th>School Name</th>
               <th>Hometown</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <% @campers.order(age: :asc).each do |camper| %>
@@ -29,6 +30,7 @@
               <td><%= camper.experience %></td>
               <td><%= camper.school %></td>
               <td><%= camper.city %>, <%= camper.state %></td>
+              <td><%= link_to 'Edit', edit_camper_path(camper.id) %> / Delete</td>
             </tr>
           </tbody>
           <% end %>

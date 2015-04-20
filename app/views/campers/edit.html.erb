@@ -1,0 +1,151 @@
+<%- title "Wolf Lacrosse - Edit Camper Data" %>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path %>"><%= image_tag 'logo_blue.png', class: 'logo-nav' %></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/camps">Camps</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/about/staff">Staff</a></li>
+        <li><a href="/about/jordan">Jordan</a></li>
+        <li class="active"><a href="<%= new_camper_path %>">Register</a></li>
+      </ul>
+      <!-- admin section -->
+      <% if current_user != nil && current_user.admin %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Menu <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/camps/new">Add a Camp</a></li>
+            <li><a href="/camps/reports">Camp Reports</a></li>
+            <li class="divider"></li>
+            <li><%= link_to'Log Out', destroy_user_session_path, method: 'delete' %></li>
+          </ul>
+        </li>
+      </ul>
+      <% end %>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="content-wrap">
+  <div class="container">
+
+  <div class="col-xs-12 col-sm-10 col-sm-offset-2">
+    <% if flash[:alert] != nil %>
+      <p class="alert"><%= flash[:alert] %></p>
+    <% end %>
+  </div>
+
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1 errors">
+    <% if @camper.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@camper.errors.count, "error") %> prevented you from registering. Please fix the following errors: %></h2>
+        <ul>
+          <% @camper.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-xs-12 col-sm-5 col-sm-offset-1">
+    <%= form_for @camper do |f| %>
+
+      <div class="form_group">
+        <p class="help-block">Camp that camper registered for:</p>
+        <%= f.label :camp_id %>
+        <%= f.select :camp_id, @camps.collect { |c| ["#{c.name}: #{c.starting_date.strftime "%A %b %e, %Y"} - #{c.ending_date.strftime "%A %b %e, %Y"}", c.id] }, { :selected => @camper.camp_id || nil}, { class: 'form-control' } %>
+      </div>
+
+      <div class="form_group">
+        <br>
+        <h3>Camper's Inforamtion</h3>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, id: 'first-name', class: 'form-control' %>
+      </div>
+
+      <div class="form_group">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, id: 'last-name', class: 'form-control' %>
+      </div>
+
+      <div class="form_group bottom-margin-small">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+
+      <div class="form_group bottom-margin-small">
+        <%= f.label :mobile_phone %>
+        <%= f.telephone_field :mobile_phone, class: 'form-control' %>
+      </div>
+
+      <div class="form_group bottom-margin-small">
+        <%= f.label :grade %>
+        <%= f.select :grade, ((4..12).map {|i| ["Grade #{i}",i]}), {:include_blank => 'Select Grade'}, {class: 'form-control'} %>
+      </div>
+
+      <div class="form_group bottom-margin-small">
+        <%= f.label :street_address_one %>
+        <%= f.text_field :street_address_one, class: 'form-control' %>
+      </div>
+
+      <div class="form_group bottom-margin-small">
+        <%= f.label :street_address_two %>
+        <%= f.text_field :street_address_two, class: 'form-control' %>
+      </div>
+
+      <div class="form_group bottom-margin-small">
+        <%= f.label :city %>
+        <%= f.text_field :city, class: 'form-control' %>
+      </div>
+
+      <div class="form_group bottom-margin-small">
+        <%= f.label :state %>
+        <%= f.select :state, options_for_select(us_states, @camper.state), {:include_blank => 'Select State'}, {class: 'form-control'} %>
+      </div>
+
+      <div class="form_group bottom-margin-small">
+        <%= f.label :zipcode %>
+        <%= f.number_field :zipcode, class: 'form-control' %>
+      </div>
+
+      <div class="form_group bottom-margin-small">
+        <%= f.label :school, "School" %>
+        <%= f.text_field :school, class: 'form-control' %>
+      </div>
+
+      <div class="form_group bottom-margin-small">
+        <%= f.label :team_name, "School or Club Team Name" %>
+        <%= f.text_field :team_name, class: 'form-control' %>
+      </div>
+
+      <div class="form_group bottom-margin-small">
+        <%= f.label :position %>
+        <%= f.select :position, options_for_select([['Attack', 'Attack'], ['Midfield', 'Midfield'], ['Defense', 'Defense'], ['Goalie', 'Goalie']], @camper.position), {:include_blank => 'Select Your Preferred Position'}, {class: 'form-control'} %>
+      </div>
+
+      <div class="form_group bottom-margin-small">
+        <%= f.label :experience, 'Years of Lacrosse Experience' %>
+        <%= f.number_field :experience, class: 'form-control' %>
+      </div>
+
+      <div class="form_group bottom-margin-small">
+        <%= f.submit "Submit", class: 'form-control' %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
