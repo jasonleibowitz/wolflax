@@ -94,7 +94,6 @@ class MailingList
     new_list_id = Camp.find(new_camp_id).list_id
 
     if camper.email
-      binding.pry
       gb.lists.static_segment_members_del({
         :id => LIST_ID,
         :seg_id => old_list_id,
