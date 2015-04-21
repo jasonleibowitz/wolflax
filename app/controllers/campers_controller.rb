@@ -35,7 +35,7 @@ class CampersController < ApplicationController
     @camper = Camper.find(params[:id])
     @camps = Camp.all
     if @camper.camp_id != camper_params[:camp_id]
-      # update mailchimp
+      MailingList.update_camp_segment(@camper, camper_params[:camp_id])
     end
     @camper.update(camper_params)
     if @camper.valid?
