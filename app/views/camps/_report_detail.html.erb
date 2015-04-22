@@ -30,7 +30,7 @@
               <td><%= camper.experience %></td>
               <td><%= camper.school %></td>
               <td><%= camper.city %>, <%= camper.state %></td>
-              <td><%= link_to 'Edit', edit_camper_path(camper.id) %> / Delete</td>
+              <td><%= link_to 'Edit', edit_camper_path(camper.id) %> / <%= link_to 'Delete', camper_path(camper.id), :method => "delete" %></td>
             </tr>
           </tbody>
           <% end %>

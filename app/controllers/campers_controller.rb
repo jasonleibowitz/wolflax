@@ -45,6 +45,12 @@ class CampersController < ApplicationController
     end
   end
 
+  def destroy
+    @camper = Camper.find(params[:id])
+    @camper.destroy!
+    redirect_to camps_reports_path, :notice => "Refund successfully processed."
+  end
+
   private
   def camper_params
     params.require(:camper).permit(:first_name, :last_name, :age, :dob, :street_address_one, :street_address_two, :city, :state, :zipcode, :team_name, :position, :experience, :mobile_phone, :email, :insurance_company_name, :insurance_policy_number, :insurance_policyholder, :mother_first_name, :mother_last_name, :mother_email, :mother_phone, :father_first_name, :father_last_name, :father_email, :father_phone, :waiver_signed, :camp_id, :school, :grade, :referral, :stripe_card_token)
