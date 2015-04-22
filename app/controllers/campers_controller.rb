@@ -11,7 +11,7 @@ class CampersController < ApplicationController
   end
 
   def new
-    @camps = Camp.all
+    @camps = Camp.upcoming.order(starting_date: :asc)
     @camper = Camper.new
   end
 
@@ -28,7 +28,7 @@ class CampersController < ApplicationController
 
   def edit
     @camper = Camper.find(params[:id])
-    @camps = Camp.all
+    @camps = Camp.upcoming.order(starting_date: :asc)
   end
 
   def update

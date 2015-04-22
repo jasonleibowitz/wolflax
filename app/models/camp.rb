@@ -16,6 +16,10 @@ class Camp < ActiveRecord::Base
     end
   end
 
+  def self.upcoming
+    Camp.all.where('starting_date > ?', Date.today)
+  end
+
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
       csv << column_names
