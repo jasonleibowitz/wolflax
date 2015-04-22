@@ -36,8 +36,8 @@ class Camper < ActiveRecord::Base
 
   def issue_refund
     ch = Stripe::Charge.retrieve(self.stripe_charge_token)
-    binding.pry
     refund = ch.refunds.create
+    MailingList.unregister_camp_segment(self)
   end
 
 
