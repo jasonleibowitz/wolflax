@@ -123,7 +123,7 @@ class MailingList
       gb.lists.static_segment_members_add({
         :id => LIST_ID,
         :seg_id => new_list_id,
-        :bath => [
+        :batch => [
           :email => camper.mother_email
         ]
       })
@@ -141,7 +141,7 @@ class MailingList
       gb.lists.static_segment_members_add({
         :id => LIST_ID,
         :seg_id => new_list_id,
-        :bath => [
+        :batch => [
           :email => camper.father_email
         ]
       })
