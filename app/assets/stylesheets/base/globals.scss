@@ -102,6 +102,16 @@ p {
   }
 }
 
+.player-x-logo {
+  width: 75px;
+  display: block;
+  margin: 0 auto;
+
+  @media screen and (max-width: $break-medium) {
+    width: 65px;
+  }
+}
+
 .fa-facebook:hover {
   color: RGB(59, 87, 157);
 }
