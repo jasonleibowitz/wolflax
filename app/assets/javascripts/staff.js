@@ -19,10 +19,12 @@ $(".home.staff").ready(function(){
   enquire.register("screen and (max-width:992px)", {
     match: function() {
       $(".manley-wrap").prepend($(".manley-profile").eq(0).remove());
+      $(".duprey-wrap").prepend($(".duprey-profile").eq(0).remove());
     },
 
     unmatch: function() {
       $(".manley-wrap").append($(".manley-profile").eq(0).remove());
+      $(".duprey-wrap").append($(".duprey-profile").eq(0).remove());
     },
   });
 
