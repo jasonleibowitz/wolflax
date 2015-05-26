@@ -18,10 +18,10 @@
               <th>Actions</th>
             </tr>
           </thead>
-          <% @campers.order(age: :asc).each do |camper| %>
+          <% @campers.order(age: :asc).each_with_index do |camper, index| %>
           <tbody>
             <tr>
-              <td>1</td>
+              <td><%= index + 1 %></td>
               <td><%= camper.first_name %></td>
               <td><%= camper.last_name %></td>
               <td><%= camper.email || 'N/A' %></td>
