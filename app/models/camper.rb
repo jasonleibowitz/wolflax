@@ -19,16 +19,13 @@ class Camper < ActiveRecord::Base
                   )
           self.stripe_charge_token = charge.id
           self.charge_state = "complete"
-          binding.pry
         rescue Stripe::CardError => e
           # Since it's a decline, Stripe::CardError will be caught
           body = e.json_body
           err  = body[:error]
           self.charge_state = "failed"
           self.stripe_error_message = err[:message]
-          binding.pry
         rescue => e
-          binding.pry
           self.charge_state = "failed"
           self.stripe_error_message = err[:message]
         end

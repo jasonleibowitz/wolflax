@@ -19,13 +19,10 @@ class CampersController < ApplicationController
     @camper = Camper.new(camper_params)
     @camps = Camp.all
     if @camper.save_with_payment
-      binding.pry
       if @camper.charge_state == "complete"
-        binding.pry
         MailingList.subscribe(@camper)
         redirect_to root_path, :notice => "Thank you for your purchase. We look forward to seeing you!"
       else
-        binding.pry
         redirect_to new_camper_path, :alert => "We could not process your payment. #{@camper.stripe_error_message}"
       end
     else
