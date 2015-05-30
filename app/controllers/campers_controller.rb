@@ -17,6 +17,7 @@ class CampersController < ApplicationController
 
   def create
     @camper = Camper.new(camper_params)
+    @camper.dob = Chronic.parse(params[:camper][:dob])
     @camps = Camp.all
     if @camper.save_with_payment
       if @camper.charge_state == "complete"
