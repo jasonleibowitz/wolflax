@@ -50,15 +50,18 @@ function positionFooter() {
 
 function msieversion() {
 
-        var ua = window.navigator.userAgent;
-        var msie = ua.indexOf("MSIE ");
+  var ua = window.navigator.userAgent;
+  var msie = ua.indexOf("MSIE ");
 
-        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer, return version number
-            alert(parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
-        else                 // If another browser, return 0
-            // alert('otherbrowser');
+  if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer, return version number
+    if (parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))) < 10) {
+      alert('You are current using Internet Explorer version ' + parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))) + '. This website requires IE 10 or higher. Please upgrade or use another browser.');
+    }
+  // If another browser, return 0
+  // else
+    // alert('otherbrowser');
 
-   return false;
+  return false;
 }
 
 var isMobile = {
