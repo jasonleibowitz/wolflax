@@ -14,23 +14,23 @@ $(window).bind("load", function() {
 
 });
 
-function positionFooter() {
+// function positionFooter() {
 
-  footerHeight = $footer.height();
-  footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+//   footerHeight = $footer.height();
+//   footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
 
- if ( ($('.content-wrap').height()+footerHeight) < $(window).height()) {
-     $footer.css({
-          position: "absolute",
-          bottom: 0
-     });
- } else {
-     $footer.css({
-          position: "static"
-     });
- }
+//  if ( ($('.content-wrap').height()+footerHeight) < $(window).height()) {
+//      $footer.css({
+//           position: "absolute",
+//           bottom: 0
+//      });
+//  } else {
+//      $footer.css({
+//           position: "static"
+//      });
+//  }
 
-}
+// }
 
 function msieversion() {
 
