@@ -22,7 +22,7 @@ class CampersController < ApplicationController
     if @camper.save_with_payment
       if @camper.charge_state == "complete"
         MailingList.subscribe(@camper)
-        redirect_to root_path, :notice => "Thank you for your purchase. We look forward to seeing you!"
+        redirect_to success_path(:id => @camper.camp.id), :notice => "Thank you for your purchase. We look forward to seeing you!"
       else
         redirect_to new_camper_path, :alert => "We could not process your payment. #{@camper.stripe_error_message}"
       end
@@ -54,6 +54,10 @@ class CampersController < ApplicationController
     @camper = Camper.find(params[:id])
     @camper.destroy!
     redirect_to camps_reports_path, :notice => "Refund successfully processed."
+  end
+
+  def success
+    @camp = Camp.find(params[:id])
   end
 
   private

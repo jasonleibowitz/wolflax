@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :camps
   resources :charges
   resources :students
+  get '/campers/success/:id' => 'campers#success', :as => 'success'
   resources :campers
   get '/about' => 'home#about'
   get '/about/jordan' => 'home#jordan'
