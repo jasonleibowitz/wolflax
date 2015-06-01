@@ -12,8 +12,8 @@ $(".home.staff").ready(function(){
   $('#stein').mouseenter(steinToggle);
   $('#stein').mouseleave(steinToggle);
 
-  $('#manley').mouseenter(manleyToggle);
-  $('#manley').mouseleave(manleyToggle);
+  // $('#manley').mouseenter(manleyToggle);
+  // $('#manley').mouseleave(manleyToggle);
 
   // Mobile Responsive DOM Manipulation using enquire.js
   enquire.register("screen and (max-width:992px)", {
