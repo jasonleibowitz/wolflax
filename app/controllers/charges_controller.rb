@@ -17,7 +17,7 @@ class ChargesController < ApplicationController
   #       :description => 'testing 123'
   #       )
   #   rescue Stripe::CardError => e
-  #     # The card ahsb een declined
+  #     # The card has been declined
   #   end
   end
 
