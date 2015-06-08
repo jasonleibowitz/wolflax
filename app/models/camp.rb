@@ -9,7 +9,7 @@ class Camp < ActiveRecord::Base
 
 
   def expired?
-    if self.start_date < Date.today
+    if self.starting_date < Date.today
       return true
     else
       return false
