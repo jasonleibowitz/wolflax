@@ -5,7 +5,7 @@ class Camp < ActiveRecord::Base
   # has_and_belongs_to_many :users
   has_many :campers
 
-  scope :expired, -> { where('date_time < ?', Date.today) }
+  scope :expired, -> { where('date_time < ?', Date.yesterday) }
 
 
   def expired?
@@ -17,7 +17,7 @@ class Camp < ActiveRecord::Base
   end
 
   def self.upcoming
-    Camp.all.where('starting_date > ?', Date.today)
+    Camp.all.where('starting_date > ?', Date.yesterday)
   end
 
   def self.to_csv(options = {})
