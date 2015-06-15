@@ -3,7 +3,7 @@ class CampsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @camps = Camp.where("starting_date > ?", Date.today).order(starting_date: :asc)
+    @camps = Camp.where("starting_date > ?", Chronic.parse('yesterday')).order(starting_date: :asc)
   end
 
   def adminview
