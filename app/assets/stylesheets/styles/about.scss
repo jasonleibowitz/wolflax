@@ -117,3 +117,55 @@ h1.jordan {
     }
   }
 }
+
+.testimonial-intro-header {
+  font-size: 50px;
+  padding: 20px 10px;
+}
+
+.testimonial-wrap {
+  .fa {
+    font-size: 2em;
+    padding-right: 20px;
+  }
+
+  .quote {
+    font-size: 20px;
+  }
+
+  span {
+    padding: 0 55px;
+    display: inline-block;
+  }
+
+  .author {
+    padding: 10px 55px;
+    font-size: 16px;
+    font-style: italic;
+
+    &:before {
+      content: '- '
+    }
+  }
+}
+
+@media screen and (max-width: $break-small) {
+  .testimonial-wrap {
+    .quote {
+      font-size: 16px;
+    }
+
+    .author {
+      font-size: 14px;
+    }
+
+    span {
+      padding: 0 20px;
+    }
+  }
+
+  .slick-next:before,
+  .slick-prev:before {
+    display: none;
+  }
+}

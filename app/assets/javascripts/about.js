@@ -20,6 +20,11 @@ $('.home.about').ready(function(){
   //   showStaff();
   // }
 
+  $(".testimonial-slider").slick({
+      dots: true,
+      adaptiveHeight: true,
+  });
+
 });
 
 // function showAbout(){

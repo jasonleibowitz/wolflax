@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require jquery-readyselector
 //= require bootstrap-datepicker
+//= require slick.min
 //= require_tree .
