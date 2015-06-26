@@ -1,4 +1,4 @@
-/*
+@charset "UTF-8";/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -468,6 +468,7 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
   width: 16px;
   height: 16px;
 }
+
 /* line 14, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/base/globals.scss */
 body {
   color: #001A57;
@@ -789,6 +790,7 @@ p {
   width: 100%;
   left: 0;
   overflow: hidden;
+  background-size: cover;
 }
 @media screen and (max-width: 1125px) {
   /* line 85, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
@@ -797,7 +799,7 @@ p {
   }
 }
 
-/* line 100, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 101, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .hero-img-overlay {
   position: relative;
   top: 0;
@@ -806,7 +808,7 @@ p {
   background: rgba(255, 255, 255, 0.4);
 }
 
-/* line 108, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 109, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .logo {
   position: absolute;
   /*width: 15%;*/
@@ -817,45 +819,45 @@ p {
   z-index: 1;
 }
 @media screen and (max-width: 1125px) {
-  /* line 108, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+  /* line 109, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
   .logo {
     opacity: 0;
     visibility: hidden;
   }
 }
 
-/* line 123, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 124, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 #welcome-img {
   width: 250px;
   margin-left: -35px;
   margin-top: -30px;
 }
 
-/* line 129, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 130, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 #welcome-top-left {
   width: 250px;
   margin-top: -30px;
 }
 
-/* line 134, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 135, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 #upcoming-img {
   width: 250px;
   margin-left: -20px;
 }
 
-/* line 139, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 140, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 #welcome-bottom-left {
   width: 320px;
   margin-left: -12px;
   margin-bottom: -7px;
 }
 
-/* line 145, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 146, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .upcoming-wrap {
   margin-top: 40px;
 }
 
-/* line 149, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 150, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .profile-wrap-homepage {
   width: 200px;
   height: 200px;
@@ -864,27 +866,27 @@ p {
   margin: 0 auto;
 }
 @media screen and (max-width: 992px) {
-  /* line 149, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+  /* line 150, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
   .profile-wrap-homepage {
     margin-bottom: 50px;
   }
 }
 
 @media screen and (max-width: 992px) {
-  /* line 161, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+  /* line 162, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
   .homepage-text {
     margin-bottom: 35px;
   }
 }
 
 @media screen and (max-width: 992px) {
-  /* line 168, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+  /* line 169, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
   .view-all-camps-button {
     margin-bottom: 50px;
   }
 }
 
-/* line 175, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 176, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .welcome-header {
   font-size: 50px;
   padding-bottom: 35px;
@@ -892,7 +894,7 @@ p {
 
 /*////////// Button animations /////////*/
 /* Common button styles */
-/* line 183, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 184, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button {
   float: left;
   min-width: 150px;
@@ -910,94 +912,94 @@ p {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 199, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 200, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button:focus {
   outline: none;
 }
 
-/* line 202, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 203, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button > span {
   vertical-align: middle;
 }
 
 /* Sizes */
-/* line 207, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 208, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--size-s {
   font-size: 14px;
 }
 
-/* line 210, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 211, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--size-m {
   font-size: 16px;
 }
 
-/* line 213, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 214, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--size-l {
   font-size: 18px;
 }
 
 /* Typography and Roundedness */
-/* line 218, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 219, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--text-upper {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-/* line 222, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 223, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--text-thin {
   font-weight: 300;
 }
 
-/* line 225, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 226, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--text-medium {
   font-weight: 500;
 }
 
-/* line 228, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 229, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--text-thick {
   font-weight: 600;
 }
 
-/* line 231, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 232, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--round-s {
   border-radius: 5px;
 }
 
-/* line 234, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 235, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--round-m {
   border-radius: 15px;
 }
 
-/* line 237, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 238, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--round-l {
   border-radius: 40px;
 }
 
 /* Borders */
-/* line 242, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 243, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--border-thin {
   border: 1px solid;
 }
 
-/* line 245, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 246, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--border-medium {
   border: 2px solid;
 }
 
-/* line 248, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 249, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--border-thick {
   border: 3px solid;
 }
 
 /* Antiman */
-/* line 253, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 254, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman {
   background: none;
   border: none;
   height: 60px;
 }
 
-/* line 259, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 260, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman.button--inverted,
 .button--antiman.button--inverted-alt {
   -webkit-transition: color 0.3s;
@@ -1006,12 +1008,12 @@ p {
   transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 }
 
-/* line 265, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 266, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman > span {
   padding-left: 0.35em;
 }
 
-/* line 269, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 270, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman::before,
 .button--antiman::after {
   content: '';
@@ -1030,7 +1032,7 @@ p {
   transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 }
 
-/* line 285, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 286, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman::before {
   border: 2px solid #37474f;
   opacity: 0;
@@ -1038,71 +1040,71 @@ p {
   transform: scale3d(1.2, 1.2, 1);
 }
 
-/* line 291, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 292, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman.button--border-thin::before {
   border-width: 1px;
 }
 
-/* line 294, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 295, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman.button--border-medium::before {
   border-width: 2px;
 }
 
-/* line 297, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 298, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman.button--border-thick::before {
   border-width: 3px;
 }
 
-/* line 300, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 301, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman.button--inverted::before {
   border-color: #0039fb;
 }
 
-/* line 303, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 304, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman.button--inverted-alt::before {
   border-color: #3f51b5;
 }
 
-/* line 306, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 307, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman::after {
   background: #fff;
 }
 
-/* line 309, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 310, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman.button--inverted::after {
   background: #0039fb;
 }
 
-/* line 312, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 313, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman.button--inverted-alt::after {
   background: #3f51b5;
 }
 
-/* line 315, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 316, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman.button--inverted:hover {
   color: #0039fb;
 }
 
-/* line 318, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 319, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman.button--inverted-alt:hover {
   color: #3f51b5;
 }
 
-/* line 321, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 322, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman:hover::before {
   opacity: 1;
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
 }
 
-/* line 326, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 327, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button--antiman:hover::after {
   opacity: 0;
   -webkit-transform: scale3d(0.8, 0.8, 1);
   transform: scale3d(0.8, 0.8, 1);
 }
 
-/* line 332, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
+/* line 333, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/home.scss */
 .button {
   float: none;
   display: inline-block;
@@ -1160,8 +1162,8 @@ p {
 
 /* line 43, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/about.scss */
 #manley {
-  margin-left: -20px;
-  margin-top: -50px;
+  margin-left: -137px;
+  margin-top: -12px;
   width: 500px;
 }
 
@@ -1243,6 +1245,63 @@ h1.jordan {
   }
 }
 
+/* line 121, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/about.scss */
+.testimonial-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 126, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/about.scss */
+.testimonial-intro-header {
+  font-size: 50px;
+  padding: 20px 10px;
+}
+
+/* line 132, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/about.scss */
+.testimonial-wrap .fa {
+  font-size: 2em;
+  padding-right: 20px;
+}
+/* line 137, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/about.scss */
+.testimonial-wrap .quote {
+  font-size: 20px;
+}
+/* line 141, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/about.scss */
+.testimonial-wrap span {
+  padding: 0 55px;
+  display: inline-block;
+}
+/* line 146, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/about.scss */
+.testimonial-wrap .author {
+  padding: 10px 55px;
+  font-size: 16px;
+  font-style: italic;
+}
+/* line 151, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/about.scss */
+.testimonial-wrap .author:before {
+  content: "- ";
+}
+
+@media screen and (max-width: 770px) {
+  /* line 159, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/about.scss */
+  .testimonial-wrap .quote {
+    font-size: 16px;
+  }
+  /* line 163, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/about.scss */
+  .testimonial-wrap .author {
+    font-size: 14px;
+  }
+  /* line 167, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/about.scss */
+  .testimonial-wrap span {
+    padding: 0 20px;
+  }
+
+  /* line 173, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/about.scss */
+  .slick-next:before,
+  .slick-prev:before {
+    display: none;
+  }
+}
 /* line 1, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/camps.scss */
 .clinic-wrap {
   padding: 2em;
@@ -1428,4 +1487,281 @@ a.checkout-button:hover {
 /* line 1, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/styles/privacypolicy.scss */
 .privacy-policy-header {
   padding-bottom: 15px;
+}
+
+/* Slider */
+/* line 40, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-loading .slick-list {
+  background: white url(/assets/ajax-loader.gif) center center no-repeat;
+}
+
+/* Icons */
+@font-face {
+  font-family: "slick";
+  src: url(/assets/slick.eot);
+  src: url(/assets/slick.eot?#iefix) format("embedded-opentype"), url(/assets/slick.woff) format("woff"), url(/assets/slick.ttf) format("truetype"), url(/assets/slick.svg#slick) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Arrows */
+/* line 59, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 30px;
+  width: 30px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  margin-top: -10px;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+/* line 74, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-prev:hover, .slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  outline: none;
+  background: transparent;
+  color: transparent;
+}
+/* line 78, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-prev:hover:before, .slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+/* line 82, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.25;
+}
+
+/* line 87, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-prev:before, .slick-next:before {
+  font-family: "slick";
+  font-size: 30px;
+  line-height: 1;
+  color: #2b2d2e;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 97, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-prev {
+  left: -35px;
+}
+/* line 99, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+[dir="rtl"] .slick-prev {
+  left: auto;
+  right: -35px;
+}
+/* line 103, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-prev:before {
+  content: "←";
+}
+/* line 105, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+[dir="rtl"] .slick-prev:before {
+  content: "→";
+}
+
+/* line 111, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-next {
+  right: -35px;
+}
+/* line 113, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+[dir="rtl"] .slick-next {
+  left: -35px;
+  right: auto;
+}
+/* line 117, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-next:before {
+  content: "→";
+}
+/* line 119, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+[dir="rtl"] .slick-next:before {
+  content: "←";
+}
+
+/* Dots */
+/* line 127, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-slider {
+  margin-bottom: 30px;
+}
+
+/* line 131, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-dots {
+  position: absolute;
+  bottom: -45px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+}
+/* line 139, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+/* line 147, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-dots li button {
+  border: 0;
+  background: transparent;
+  display: block;
+  height: 20px;
+  width: 20px;
+  outline: none;
+  line-height: 0px;
+  font-size: 0px;
+  color: transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+/* line 159, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-dots li button:hover, .slick-dots li button:focus {
+  outline: none;
+}
+/* line 161, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-dots li button:hover:before, .slick-dots li button:focus:before {
+  opacity: 1;
+}
+/* line 165, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "•";
+  width: 20px;
+  height: 20px;
+  font-family: "slick";
+  font-size: 6px;
+  line-height: 20px;
+  text-align: center;
+  color: black;
+  opacity: 0.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* line 182, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick-theme.scss */
+.slick-dots li.slick-active button:before {
+  color: black;
+  opacity: 0.75;
+}
+
+/* Slider */
+/* line 4, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 19, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+/* line 26, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-list:focus {
+  outline: none;
+}
+/* line 30, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+/* line 36, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* line 44, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+}
+/* line 51, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table;
+}
+/* line 56, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-track:after {
+  clear: both;
+}
+/* line 60, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+/* line 64, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+/* line 68, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+/* line 71, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-slide img {
+  display: block;
+}
+/* line 74, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-slide.slick-loading img {
+  display: none;
+}
+/* line 80, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+/* line 84, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-initialized .slick-slide {
+  display: block;
+}
+/* line 88, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+/* line 92, /Users/jason_leibowitz/Programming/Consulting/wolflax/app/assets/stylesheets/slick.scss */
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
 }
