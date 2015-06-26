@@ -121,6 +121,16 @@ h1.jordan {
 .testimonial-container {
   margin-top: 20px;
   margin-bottom: 20px;
+
+  &.all-testimonials {
+    .testimonial-wrap {
+      padding-bottom: 100px;
+    }
+
+    .button-wrap {
+      padding-left: 55px;
+    }
+  }
 }
 
 .testimonial-intro-header {
