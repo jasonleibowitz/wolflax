@@ -91,6 +91,7 @@
   width: 100%;
   left: 0;
   overflow: hidden;
+  background-size: cover;
 
   @media screen and (max-width: $break-large) {
     height: 50%;
