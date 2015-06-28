@@ -17,7 +17,7 @@ class Camp < ActiveRecord::Base
   end
 
   def self.upcoming
-    Camp.all.where('starting_date > ?', Chronic.parse('yesterday'))
+    Camp.all.where('starting_date >= ?', Chronic.parse('yesterday'))
   end
 
   def self.to_csv(options = {})
