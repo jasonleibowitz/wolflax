@@ -46,10 +46,16 @@
     <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 upcoming-camps">
       <h1 class="centered">All Testimonials</h1>
     </div>
+    <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 upcoming-camps">
+      <p class="centered">This is the admin-only view of the testimonials. From here you can view, create, edit, and delete any of your existing testimonials.</p>
+    </div>
   </div>
 
   <div class="container testimonial-container all-testimonials">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <% unless @testimonials.at_capacity? %>
+        <%= link_to 'New Testimonial', new_testimonial_path, class: 'new-testimonial-btn btn btn-primary' %>
+      <% end %>
       <% @testimonials.each do |t| %>
         <div class="testimonial-wrap">
           <p class="quote">

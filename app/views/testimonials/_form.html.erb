@@ -3,7 +3,7 @@
     <% if @testimonial.errors.any? %>
       <p>Please correct the following errors:</p>
       <ul>
-        <% @testimonial.errors.full_message.each do |error_message| %>
+        <% @testimonial.errors.full_messages.each do |error_message| %>
           <li><%= error_message %></li>
         <% end %>
       </ul>

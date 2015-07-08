@@ -36,7 +36,7 @@ class TestimonialsController < ApplicationController
   def destroy
     @testimonial = Testimonial.find(params[:id])
     @testimonial.destroy!
-    redirect_to root_path
+    redirect_to testimonials_path
   end
 
   private

@@ -50,7 +50,8 @@
     <% if current_user != nil && current_user.admin %>
       <%= link_to 'Admin Log Out', destroy_user_session_path, method: 'delete' %> <br>
       <%= link_to 'Add a Camp', new_camp_path %> <br>
-      <%= link_to 'Camp Reports', camps_reports_path %>
+      <%= link_to 'Camp Reports', camps_reports_path %> <br>
+      <%= link_to 'Testimonials', testimonials_path %>
     <% end %>
   </div>
   <div class="col-sm-3 col-md-2">
