@@ -6,4 +6,8 @@ class Testimonial < ActiveRecord::Base
   def self.at_capacity?
     self.count >= 10 ? true : false
   end
+
+  def self.empty?
+    self.count == 0 ? true : false
+  end
 end

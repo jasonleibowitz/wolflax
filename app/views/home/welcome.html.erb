@@ -85,7 +85,9 @@
       </div>
     </div>
 
-    <%= render 'testimonials' %>
+    <% unless @testimonials.empty? %>
+      <%= render 'testimonials' %>
+    <% end %>
 
     <div class="col-xs-12 centered">
         <h1 class="bottom-margin-small">Upcoming Camps</h1>
