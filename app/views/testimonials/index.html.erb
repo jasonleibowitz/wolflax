@@ -1,3 +1,5 @@
+<%- title "Wolf Lacrosse - All Testimonials" %>
+
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -14,7 +16,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/camps">Camps</a></li>
+        <li class="active"><a href="/camps">Camps</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/about/staff">Staff</a></li>
         <li><a href="/about/jordan">Jordan</a></li>
@@ -39,19 +41,37 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div class="container">
-  <div class="col-xs-10 col-xs-offset-1 centered bottom-margin">
-    <h1>Campers Signed Up for <%= @camp.name %></h1>
-    <h4><%= @camp.starting_date.strftime "%a %b %e, %Y" %> - <%= @camp.ending_date.strftime "%a %b %e, %Y" %></h4>
-    <h4>Total Campers: <%= @camp.campers.length %></h4>
+<div class="content-wrap">
+  <div class="container">
+    <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 upcoming-camps">
+      <h1 class="centered">All Testimonials</h1>
+    </div>
+    <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 upcoming-camps">
+      <p class="centered">This is the admin-only view of the testimonials. From here you can view, create, edit, and delete any of your existing testimonials.</p>
+    </div>
   </div>
 
-  <div class="col-xs-10 col-xs-offset-2">
-    <ol>
-      <% @campers.each do |camper| %>
-        <li><a href="mailto:<%= camper.email %>"><%= camper.name %></a>, <%= camper.position %>, <%= camper.age %></li>
+  <div class="container testimonial-container all-testimonials">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <% unless @testimonials.at_capacity? %>
+        <%= link_to 'New Testimonial', new_testimonial_path, class: 'new-testimonial-btn btn btn-primary' %>
       <% end %>
-    </ol>
+      <% @testimonials.each do |t| %>
+        <div class="testimonial-wrap">
+          <p class="quote">
+            <i class="fa fa-quote-left"></i>
+            <span><%= t.quote %></span>
+            <% unless t.author.empty? %>
+              <p class="author"><%= t.author %></p>
+            <% end %>
+          </p>
+          <div class="button-wrap">
+            <%= button_to 'edit', edit_testimonial_path(t), method: 'get', class: 'btn btn-info float-left' %>
+            <%= button_to 'delete', testimonial_path(t), method: 'delete', class: 'btn btn-danger float-left' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
 
+</div>

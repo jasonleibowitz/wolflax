@@ -1,35 +1,16 @@
 <div class="container testimonial-container">
   <h1 class="testimonial-intro-header">Testimonials</h1>
   <div class="col-sm-12 testimonial-slider">
-    <div class="testimonial-wrap">
-      <p class="quote">
-        <i class="fa fa-quote-left"></i>
-        <span>This was by far the best lacrosse camp we've attended. My son came home each day commenting about how much fun he had and how great the coaches were. He said he felt like the coaches genuinely cared about him and how he was doing.</span>
-      </p>
-    </div>
-
-    <div class="testimonial-wrap">
-      <p class="quote">
-        <i class="fa fa-quote-left"></i>
-        <span>Zach came home on cloud 9 after this experience! We so appreciate Jordan sharing his talents and personality with young people. He is the type of role model I want for my son. Our whole family will be following Jordan and his team! Very impressed!</span>
-      </p>
-    </div>
-
-    <!-- <div class="testimonial-wrap">
-      <p class="quote">
-        <i class="fa fa-quote-left"></i>
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam debitis tempore, molestiae, natus explicabo consectetur eligendi vero rem animi odio architecto atque maiores voluptatem inventore accusamus? Quis, quam nesciunt sunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima error molestiae provident illum iusto quos quo nisi, laudantium sit deserunt, quae, in ullam eius dolor autem dolore explicabo veniam enim?</span>
-      </p>
-      <p class="author">Someone Famous</p>
-    </div>
-
-    <div class="testimonial-wrap">
-      <p class="quote">
-        <i class="fa fa-quote-left"></i>
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam debitis tempore, molestiae, natus explicabo consectetur eligendi vero rem animi odio architecto atque maiores voluptatem inventore accusamus? Quis, quam nesciunt sunt!</span>
-      </p>
-      <p class="author">Someone Famous</p>
-    </div> -->
-
+    <% @testimonials.each do |t| %>
+      <div class="testimonial-wrap">
+        <p class="quote">
+          <i class="fa fa-quote-left"></i>
+          <span><%= t.quote %></span>
+        </p>
+        <% unless t.author.empty? %>
+          <p class="author"><%= t.author %></p>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

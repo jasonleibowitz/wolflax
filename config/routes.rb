@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   # get '/faq' => 'home#faq'
   # get '/contact' => 'home#contact'
   get '/admin/clinics' => 'clinics#adminview'
+  resources :testimonials
   root to: 'home#welcome'
 end
