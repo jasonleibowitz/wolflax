@@ -24,6 +24,7 @@ class CampersController < ApplicationController
         MailingList.subscribe(@camper)
         redirect_to success_path(:id => @camper.camp.id), :notice => "Thank you for your purchase. We look forward to seeing you!"
       else
+        @camper.delete
         redirect_to new_camper_path, :alert => "Unfortunately we were unable to process your payment. #{@camper.stripe_error_message}. Please contact your credit card company and then try registering again."
       end
     else
